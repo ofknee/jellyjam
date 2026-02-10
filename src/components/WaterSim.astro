@@ -1,0 +1,133 @@
+<canvas 
+id="waterCanvas" 
+class="fixed inset-0 w-full h-full pointer-events-none" 
+style="z-index: -1; background: transparent;"
+></canvas>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('waterCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const res = 10;
+  let width, height, capacity;
+  let buffer1, buffer2;
+  const damping = 0.95;
+
+  // We only create a buffer as big as the screen
+  function init() {
+    width = Math.floor(window.innerWidth / res);
+    height = Math.floor(window.innerHeight / res);
+    capacity = width * height;
+    canvas.width = width;
+    canvas.height = height;
+    buffer1 = new Int32Array(capacity).fill(0);
+    buffer2 = new Int32Array(capacity).fill(0);
+  }
+
+  let lastMouseX = -1;
+  let lastMouseY = -1;
+  let screenMouseX = -1;
+  let screenMouseY = -1;
+
+  function disturb(x, y) {
+    if (lastMouseX === -1) {
+      lastMouseX = x;
+      lastMouseY = y;
+      return;
+    }
+
+    const dx = x - lastMouseX;
+    const dy = y - lastMouseY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const steps = Math.max(Math.floor(distance / res), 1);
+
+    for (let i = 0; i < steps; i++) {
+      const cx = Math.floor((lastMouseX + (dx * (i / steps))) / res);
+      const cy = Math.floor((lastMouseY + (dy * (i / steps))) / res);
+      if (cx > 0 && cx < width && cy > 0 && cy < height) {
+        buffer1[cy * width + cx] = 50;
+      }
+    }
+    lastMouseX = x;
+    lastMouseY = y;
+  }
+
+  function update() {
+    const img = ctx.createImageData(width, height);
+    const data = img.data;
+
+    // The Math Loop
+    for (let i = width; i < capacity - width; i++) {
+      buffer2[i] = ((buffer1[i - 1] + buffer1[i + 1] + 
+        buffer1[i - width] + buffer1[i + width]) >> 1) - buffer2[i];
+      buffer2[i] *= damping;
+
+      const val = Math.abs(buffer2[i]);
+      if (val > 0.5) {
+        const pos = i * 4;
+        data[pos] = 1;      // R
+        data[pos + 1] = 205;  // G
+        data[pos + 2] = 254;  // B
+        data[pos + 3] = Math.min(255, val); // A
+      }
+    }
+
+    ctx.putImageData(img, 0, 0);
+    [buffer1, buffer2] = [buffer2, buffer1];
+    requestAnimationFrame(update);
+  }
+
+  // Capture mouse
+  window.addEventListener('mousemove', (e) => {
+    screenMouseX = e.clientX;
+    screenMouseY = e.clientY;
+    disturb(screenMouseX, screenMouseY);
+  });
+
+  // Capture scroll and disturb based on speed
+  let lastScrollY = window.scrollY;
+  
+  function shiftBuffers(deltaY) {
+    const shift = Math.floor(deltaY / res);
+    if (shift === 0) return;
+    
+    // If scrolling down, move data UP
+    if (shift > 0) {
+      for (let i = 0; i < capacity - (shift * width); i++) {
+        buffer1[i] = buffer1[i + (shift * width)];
+        buffer2[i] = buffer2[i + (shift * width)];
+      }
+    } 
+    // If scrolling up, move data DOWN
+    else {
+      const absShift = Math.abs(shift);
+      for (let i = capacity - 1; i >= absShift * width; i--) {
+        buffer1[i] = buffer1[i - (absShift * width)];
+        buffer2[i] = buffer2[i - (absShift * width)];
+      }
+    }
+  }
+  
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+    
+    // 1. Shift the existing ripples so they stay with the background
+    shiftBuffers(delta);
+    
+    // 2. Create new ripples as the mouse "drags" through the water
+    if (screenMouseX !== -1) {
+      disturb(screenMouseX, screenMouseY);
+    }
+    
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
+  window.addEventListener('resize', init);
+  init();
+  update();
+});
+</script>

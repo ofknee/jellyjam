@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css';
+import WaterSim from '../components/WaterSim.astro';
+import Header from '../components/Header.astro';
+import "../styles/global.css";
 const { title } = Astro.props;
 ---
 
@@ -9,34 +11,14 @@ const { title } = Astro.props;
     <title>{title}</title>
     <meta name="viewport" content="width=device-width" />
   </head>
-  <body class="selection:bg-jelly-blue/30">
-    <nav class="fixed top-0 w-full z-50 px-8 py-5 flex justify-between items-center glass border-b border-white/10">
-      <span class="text-2xl font-black italic tracking-tight text-jelly-blue font-display cursor-pointer hover:scale-110 transition-transform duration-300 select-none">🪼 JELLYJAM</span>
-      <div class="flex gap-4 font-semibold text-sm uppercase tracking-wider">
-        <a href="#about" class="px-6 py-2 rounded-lg bg-white/5 hover:bg-jelly-blue/20 hover:text-jelly-blue transition-all duration-150 border border-white/10 hover:border-jelly-blue/50">About</a>
-        <a href="#rules" class="px-6 py-2 rounded-lg bg-white/5 hover:bg-jelly-blue/20 hover:text-jelly-blue transition-all duration-150 border border-white/10 hover:border-jelly-blue/50">Rules</a>
-        <a href="#faq" class="px-6 py-2 rounded-lg bg-white/5 hover:bg-jelly-blue/20 hover:text-jelly-blue transition-all duration-150 border border-white/10 hover:border-jelly-blue/50">FAQ</a>
-      </div>
-    </nav>
+  <body>
+    <WaterSim />
     
-    <slot />
+    <Header />
     
-    <footer class="py-16 text-center border-t border-white/10 bg-gradient-to-t from-jelly-blue/10 via-jelly-blue/5 to-transparent relative overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <div class="glass p-8 rounded-3xl mb-8 inline-block max-w-xl mx-auto">
-          <h3 class="text-xl font-bold font-display text-jelly-blue mb-3">🌊 Ready to Dive In?</h3>
-          <p class="text-sm text-blue-200/80 leading-relaxed">Join the JellyJam community and create something amazing. See you in the undersea arena!</p>
-        </div>
-        <div class="flex justify-center gap-6 mb-8">
-          <a href="#about" class="text-blue-200/70 hover:text-jelly-blue transition-colors duration-300 text-sm font-medium">About</a>
-          <span class="text-blue-200/40">•</span>
-          <a href="#rules" class="text-blue-200/70 hover:text-jelly-blue transition-colors duration-300 text-sm font-medium">Rules</a>
-          <span class="text-blue-200/40">•</span>
-          <a href="#faq" class="text-blue-200/70 hover:text-jelly-blue transition-colors duration-300 text-sm font-medium">FAQ</a>
-        </div>
-        <p class="text-xs text-blue-200/60 font-medium tracking-wider">Stay Squishy 🦑 © 2026 JellyJam • Depths Unknown</p>
-      </div>
-      <div class="absolute top-0 left-0 right-0 bottom-0 opacity-10 pointer-events-none" style="background: radial-gradient(circle at 20% 50%, var(--jelly-blue) 0%, transparent 50%)"></div>
-    </footer>
+
+    <main class="pt-20">
+      <slot />
+    </main>
   </body>
 </html>

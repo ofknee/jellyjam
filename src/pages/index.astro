@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="JellyJam 2026 | Underwater Game Jam">
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden pt-20 pb-20">
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20 pb-20">
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-jelly-blue/20 blur-[120px] -z-10 animate-pulse"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-jelly-pink/15 blur-[120px] -z-10 animate-pulse" style="animation-delay: 1s;"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-400/10 blur-[100px] -z-10 animate-wave"></div>
@@ -11,31 +11,54 @@ import MainLayout from '../layouts/MainLayout.astro';
     <h1 class="text-6xl md:text-8xl font-black italic mt-8 mb-8 bg-gradient-to-r from-jelly-blue via-white to-jelly-pink bg-clip-text text-transparent leading-tight font-display tracking-tighter cursor-default select-none">✨ Jellyfish Jam ✨</h1>
     <p class="text-lg md:text-xl text-blue-200/70 max-w-2xl font-light tracking-wide mb-12">A 12-hour game jam at Leland High School. Dive deep into the marine theme.</p>
     
-    <div class="glass px-8 py-3 rounded-full text-sm font-medium text-jelly-blue tracking-wider hover:bg-jelly-blue/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(1,205,254,0.5)] active:scale-95 transition-all duration-300 cursor-pointer select-none group">
-      <span class="inline-block group-hover:scale-125 transition-transform duration-300">🎮</span> GAMES START: APRIL Something, 2026
+    <div class="glass px-8 py-3 rounded-full text-sm font-medium text-jelly-blue tracking-wider hover:bg-jelly-blue/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(1,205,254,0.5)] active:scale-95 transition-all duration-300 cursor-pointer select-none group" onclick="window.rippleElement(this)">
+      <span class="inline-block group-hover:scale-125 transition-transform duration-300">🎮</span> GAME START: APRIL Something, 2026
     </div>
   </section>
-
+  <div class="card" onclick="window.rippleElement(this)">
+    <h3>The Squish</h3>
+    <p>Click me to make a splash!</p>
+  </div>
   <!-- About: Three features section -->
-  <section id="about" class="max-w-6xl mx-auto py-40 px-6 grid md:grid-cols-3 gap-8">
-    <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)]">
-      <div class="text-jelly-pink text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 origin-left">🌊</div>
-      <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">The Squish</h3>
-      <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">Flow together with a community of indie devs. Create games that feel fluid and fun. All skill levels welcome in our ocean!</p>
+  <section id="about" class="max-w-6xl mx-auto py-40 px-6">
+    <!-- Section Title -->
+    <div class="text-center mb-20">
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-0">
+        About JellyJam
+      </h2>
+      <p class="text-blue-200/60 max-w-2xl mx-auto">
+        A squishy, creative game jam where indie devs dive into ocean-inspired ideas together.
+      </p>
     </div>
-
-    <div class="card group-hover:shadow-[0_0_30px_rgba(1,205,254,0.3)]">
-      <div class="text-jelly-blue text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 origin-left">🐙</div>
-      <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-blue transition-colors duration-300">The Theme</h3>
-      <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">Dive into "Marine". Interpret it mechanically, narratively, or visually. Jellies included, but let your creativity swim free!</p>
-    </div>
-
-    <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)]">
-      <div class="text-jelly-pink text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 origin-left">🏆</div>
-      <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">The Loot</h3>
-      <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">Top games get surfaced on this website and win some prizes! Rising stars of the game jam ocean!</p>
+  
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)]">
+        <div class="text-jelly-pink text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 origin-left">🌊</div>
+        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">The Squish</h3>
+        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
+          Flow together with a community of indie devs. Create games that feel fluid and fun. All skill levels welcome in our ocean!
+        </p>
+      </div>
+  
+      <div class="card group-hover:shadow-[0_0_30px_rgba(1,205,254,0.3)]">
+        <div class="text-jelly-blue text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 origin-left">🐙</div>
+        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-blue transition-colors duration-300">The Theme</h3>
+        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
+          Dive into "Marine". Interpret it mechanically, narratively, or visually. Jellies included, but let your creativity swim free!
+        </p>
+      </div>
+  
+      <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)]">
+        <div class="text-jelly-pink text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 origin-left">🏆</div>
+        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">The Loot</h3>
+        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
+          Top games get surfaced on this website and win some prizes! Rising stars of the game jam ocean!
+        </p>
+      </div>
     </div>
   </section>
+
 
   <section id="sponsors" class="py-28 border-y border-white/10">
     <p class="text-center text-xs uppercase tracking-widest mb-16 opacity-60 font-semibold">🌊 Currents of Support 🌊</p>
@@ -100,11 +123,11 @@ import MainLayout from '../layouts/MainLayout.astro';
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean overflow-hidden group-hover:scale-95 transition">
+          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class=\"font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300\">Captain Jellyfish</h4>
+        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300\">Captain Jellyfish</h4>
         <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Lead Organizer</p>
       </div>
       </div>
