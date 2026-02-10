@@ -10,5 +10,5 @@ export default defineConfig({
   },
   outDir: './docs', // <-- output here instead of /dist
   site: 'https://ofknee.github.io',
-  base: '/jellyjam',
+  base: '/jellyjam/',
 });
