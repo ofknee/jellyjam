@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+:root {
+  --jelly-pink: #ff71ce;
+  --jelly-blue: #01cdfe;
+  --deep-ocean: #050614;
+}
+
+body {
+  background-color: var(--deep-ocean);
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

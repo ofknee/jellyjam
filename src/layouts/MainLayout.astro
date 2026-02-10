@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body class="selection:bg-jelly-blue/30">
+    <nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+      <span class="text-2xl font-black italic tracking-tighter text-jelly-blue">JELLYJAM</span>
+      <div class="flex gap-8 font-medium text-sm uppercase tracking-widest">
+        <a href="#about" class="hover:text-jelly-pink transition">About</a>
+        <a href="#rules" class="hover:text-jelly-pink transition">Rules</a>
+        <a href="#faq" class="hover:text-jelly-pink transition">FAQ</a>
+      </div>
+    </nav>
+    
+    <slot />
+    
+    <footer class="py-20 text-center border-t border-white/5 opacity-50 text-sm">
+      <p>Stay Squishy. © 2026 JellyJam</p>
+    </footer>
+  </body>
+</html>
