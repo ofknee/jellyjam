@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Attach .water-solid interactions ---
   function bindWaterSolid() {
     document.querySelectorAll('.water-solid').forEach(el => {
-      el.addEventListener('mouseenter', () => splashRect(el.getBoundingClientRect(), 80));
-      el.addEventListener('click', () => splashRect(el.getBoundingClientRect(), 120));
+      el.addEventListener('mouseenter', () => splashRect(el.getBoundingClientRect(), 20));
+      el.addEventListener('click', () => splashRect(el.getBoundingClientRect(), 30));
     });
   }
 
