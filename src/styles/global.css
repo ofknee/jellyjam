@@ -2,11 +2,123 @@
 @import "tailwindcss";
 
 :root {
-  --jelly-pink: #ff71ce;
+  /*--jelly-pink: #ff71ce;
   --jelly-blue: #01cdfe;
   --deep-ocean: #050614;
   --wave-1: #0a7ea4;
-  --wave-2: #0d9488;
+  --wave-2: #0d9488;*/
+  --color-deep-twilight-50: #e6e7fe;
+  --color-deep-twilight-100: #cecefd;
+  --color-deep-twilight-200: #9c9efc;
+  --color-deep-twilight-300: #6b6dfa;
+  --color-deep-twilight-400: #393cf9;
+  --color-deep-twilight-500: #080cf7;
+  --color-deep-twilight-600: #0609c6;
+  --color-deep-twilight-700: #050794;
+  --color-deep-twilight-800: #030563;
+  --color-deep-twilight-900: #020231;
+  --color-deep-twilight-950: #010223;
+  
+  --color-french-blue-50: #e6f1ff;
+  --color-french-blue-100: #cde2fe;
+  --color-french-blue-200: #9bc5fd;
+  --color-french-blue-300: #68a9fd;
+  --color-french-blue-400: #368cfc;
+  --color-french-blue-500: #046ffb;
+  --color-french-blue-600: #0359c9;
+  --color-french-blue-700: #024397;
+  --color-french-blue-800: #022c64;
+  --color-french-blue-900: #011632;
+  --color-french-blue-950: #011023;
+  
+  --color-bright-teal-blue-50: #e5f6ff;
+  --color-bright-teal-blue-100: #ccedff;
+  --color-bright-teal-blue-200: #99dbff;
+  --color-bright-teal-blue-300: #66c9ff;
+  --color-bright-teal-blue-400: #33b8ff;
+  --color-bright-teal-blue-500: #00a6ff;
+  --color-bright-teal-blue-600: #0085cc;
+  --color-bright-teal-blue-700: #006399;
+  --color-bright-teal-blue-800: #004266;
+  --color-bright-teal-blue-900: #002133;
+  --color-bright-teal-blue-950: #001724;
+  
+  --color-blue-green-50: #e5f9ff;
+  --color-blue-green-100: #ccf2ff;
+  --color-blue-green-200: #99e6ff;
+  --color-blue-green-300: #66d9ff;
+  --color-blue-green-400: #33ccff;
+  --color-blue-green-500: #00bfff;
+  --color-blue-green-600: #0099cc;
+  --color-blue-green-700: #007399;
+  --color-blue-green-800: #004d66;
+  --color-blue-green-900: #002633;
+  --color-blue-green-950: #001b24;
+  
+  --color-turquoise-surf-50: #e5fbff;
+  --color-turquoise-surf-100: #ccf6ff;
+  --color-turquoise-surf-200: #99eeff;
+  --color-turquoise-surf-300: #66e5ff;
+  --color-turquoise-surf-400: #33ddff;
+  --color-turquoise-surf-500: #00d4ff;
+  --color-turquoise-surf-600: #00aacc;
+  --color-turquoise-surf-700: #007f99;
+  --color-turquoise-surf-800: #005566;
+  --color-turquoise-surf-900: #002a33;
+  --color-turquoise-surf-950: #001e24;
+  
+  --color-sky-aqua-50: #e9f9fc;
+  --color-sky-aqua-100: #d3f2f8;
+  --color-sky-aqua-200: #a6e5f2;
+  --color-sky-aqua-300: #7ad8eb;
+  --color-sky-aqua-400: #4ecbe4;
+  --color-sky-aqua-500: #21bede;
+  --color-sky-aqua-600: #1b98b1;
+  --color-sky-aqua-700: #147285;
+  --color-sky-aqua-800: #0d4c59;
+  --color-sky-aqua-900: #07262c;
+  --color-sky-aqua-950: #051b1f;
+  
+  --color-frosted-blue-50: #e9f9fc;
+  --color-frosted-blue-100: #d2f3f9;
+  --color-frosted-blue-200: #a6e7f2;
+  --color-frosted-blue-300: #79dbec;
+  --color-frosted-blue-400: #4ccfe6;
+  --color-frosted-blue-500: #20c2df;
+  --color-frosted-blue-600: #199cb3;
+  --color-frosted-blue-700: #137586;
+  --color-frosted-blue-800: #0d4e59;
+  --color-frosted-blue-900: #06272d;
+  --color-frosted-blue-950: #041b1f;
+  
+  --color-frosted-blue-50: #e9f9fc;
+  --color-frosted-blue-100: #d2f2f9;
+  --color-frosted-blue-200: #a5e6f3;
+  --color-frosted-blue-300: #78d9ed;
+  --color-frosted-blue-400: #4bcde7;
+  --color-frosted-blue-500: #1fc0e0;
+  --color-frosted-blue-600: #189ab4;
+  --color-frosted-blue-700: #127387;
+  --color-frosted-blue-800: #0c4d5a;
+  --color-frosted-blue-900: #06262d;
+  --color-frosted-blue-950: #041b1f;
+  
+  --color-light-cyan-50: #e8f9fc;
+  --color-light-cyan-100: #d2f3f9;
+  --color-light-cyan-200: #a5e6f3;
+  --color-light-cyan-300: #78daed;
+  --color-light-cyan-400: #4acde8;
+  --color-light-cyan-500: #1dc1e2;
+  --color-light-cyan-600: #179ab5;
+  --color-light-cyan-700: #127487;
+  --color-light-cyan-800: #0c4d5a;
+  --color-light-cyan-900: #06272d;
+  --color-light-cyan-950: #041b20;
+  
+  --sea-deep: var(--color-deep-twilight-950);
+  --sea-surface: var(--color-turquoise-surf-500);
+  --sea-glow: var(--color-light-cyan-400);
+  --sea-text: var(--color-blue-green-100);
 }
 
 /* ============================= */
@@ -16,13 +128,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-
-  background: linear-gradient(
-    135deg,
-    var(--deep-ocean) 0%,
-    #0a1929 50%,
-    #051a2b 100%
-  );
+  background: radial-gradient(
+      circle at 50% -20%,
+      var(--color-french-blue-900) 0%,
+      var(--color-deep-twilight-950) 100%
+    );
   background-attachment: fixed;
 }
 
@@ -46,7 +156,7 @@ html {
 
 body {
   font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: white;
+  color: var(--sea-text);
   position: relative;
   min-height: 100vh;
 }
@@ -136,16 +246,10 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================= */
 
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(1, 205, 254, 0.15);
-  box-shadow:
-    0 8px 32px rgba(1, 205, 254, 0.1),
-    inset 0 0 20px rgba(1, 205, 254, 0.05);
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-french-blue-900); /* Based on french-blue-900 */
+  backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid var(--color-bright-teal-blue-800);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .glass-header {
@@ -190,16 +294,22 @@ button:active, [role="button"]:active, .interactive:active {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(1, 205, 254, 0.15);
+  background: rgba(2, 44, 100, 0.2);
+  border: 1px solid var(--color-french-blue-700);
   padding: 48px;
   border-radius: 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-16px);
+  border-color: var(--color-turquoise-surf-400);
+  background: rgba(2, 44, 100, 0.4);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.rule-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
