@@ -8,6 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  // site: 'https://ofknee.github.io',
-  // base: '/jellyjam',
+  outDir: './docs', // <-- output here instead of /dist
+  site: 'https://ofknee.github.io',
+  base: '/jellyjam',
 });
