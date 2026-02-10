@@ -1,12 +1,36 @@
+---
+import DiscordIcon from './icons/Discord.astro';
+import GithubIcon from './icons/Github.astro';
+import InstagramIcon from './icons/Instagram.astro';
+---
+
 <nav class="sticky top-0 z-[100] w-full">
-  <div
-    class="glass glass-header px-8 py-5 flex justify-between items-center border-b border-white/10 rounded-none"
-  >
-    <span class="text-2xl font-black italic text-jelly-blue">🪼 JELLYJAM</span>
-    <div class="flex gap-4 font-semibold text-sm uppercase">
-      <a href="#about" class="hover:text-jelly-blue transition-colors">About</a>
-      <a href="#rules" class="hover:text-jelly-blue transition-colors">Rules</a>
-      <a href="#faq" class="hover:text-jelly-blue transition-colors">FAQ</a>
+  <div class="glass glass-header px-8 py-5 grid grid-cols-3 items-center border-b border-white/10 rounded-none">
+    
+    <div class="flex justify-start">
+      <span class="text-2xl font-black italic text-[var(--color-accent)]">🪼 JELLYJAM</span>
+    </div>
+
+    <div class="flex justify-center gap-6 font-semibold text-sm uppercase tracking-wider">
+      <a href="#about" class="hover:text-[var(--color-accent)] transition-colors">About</a>
+      <a href="#rules" class="hover:text-[var(--color-accent)] transition-colors">Rules</a>
+      <a href="#faq" class="hover:text-[var(--color-accent)] transition-colors">FAQ</a>
+      <a href="#sponsors" class="hover:text-[var(--color-accent)] transition-colors">Sponsors</a>
+      <a href="#prizes" class="hover:text-[var(--color-accent)] transition-colors">Prizes</a>
+    </div>
+
+    <div class="flex justify-end items-center gap-5">
+      <div class="flex gap-4 text-lg">
+        <a href="https://instagram.com" target="_blank" class="hover:text-(--color-french-blue-400) transition-all hover:scale-110 duration-300">
+          <InstagramIcon class="w-6 h-6" />
+        </a>
+        <a href="https://discord.com" target="_blank" class="hover:text-(--color-french-blue-400) transition-all hover:scale-110 duration-300">
+          <DiscordIcon class="w-6 h-6" />
+        </a>
+        <a href="https://github.com" target="_blank" class="hover:text-(--color-french-blue-400) transition-all hover:scale-110 duration-300">
+          <GithubIcon class="w-6 h-6" />
+        </a>
+      </div>
     </div>
   </div>
 </nav>

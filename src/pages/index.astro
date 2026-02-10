@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import DiscordIcon from '../components/icons/Discord.astro';
+import GithubIcon from '../components/icons/Github.astro';
+import InstagramIcon from '../components/icons/Instagram.astro';
 ---
 
 <MainLayout title="JellyJam 2026 | Underwater Game Jam">
@@ -173,15 +176,18 @@ import MainLayout from '../layouts/MainLayout.astro';
           </p>
         </div>
   
-        <div class="flex justify-center gap-8">
-          <a href="https://discord.gg/yourlink" target="_blank" class="text-blue-200/60 hover:text-jelly-blue hover:scale-110 transition-all duration-300" title="Discord">
-            <span class="text-2xl">💬</span> </a>
-          <a href="https://github.com/yourlink" target="_blank" class="text-blue-200/60 hover:text-jelly-pink hover:scale-110 transition-all duration-300" title="GitHub">
-            <span class="text-2xl">💻</span>
-          </a>
-          <a href="https://instagram.com/yourlink" target="_blank" class="text-blue-200/60 hover:text-white hover:scale-110 transition-all duration-300" title="Instagram">
-            <span class="text-2xl">📸</span>
-          </a>
+        <div class="flex justify-center items-center gap-8">
+          <div class="flex gap-4 text-lg">
+            <a href="https://instagram.com" target="_blank" class="text-blue-200/60 hover:text-(--color-deep-twilight-300) transition-all hover:scale-110 duration-300">
+              <InstagramIcon class="w-6 h-6" />
+            </a>
+            <a href="https://discord.com" target="_blank" class="text-blue-200/60 hover:text-(--color-deep-twilight-300) transition-all hover:scale-110 duration-300">
+              <DiscordIcon class="w-6 h-6" />
+            </a>
+            <a href="https://github.com" target="_blank" class="text-blue-200/60 hover:text-(--color-deep-twilight-300) transition-all hover:scale-110 duration-300">
+              <GithubIcon class="w-6 h-6" />
+            </a>
+          </div>
         </div>
   
         <div class="text-center md:text-right">
