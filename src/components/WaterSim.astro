@@ -1,7 +1,7 @@
 <canvas 
   id="waterCanvas" 
   class="fixed inset-0 w-full h-full pointer-events-none" 
-  style="z-index: -1; background: transparent;"
+  style="z-index: -1; background: transparent; filter: blur(8px); transform: scale(1.05);"
 ></canvas>
 
 <script is:inline>
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  const res = 4; // smaller = higher resolution
+  const res = 10; // smaller = higher resolution
   let width, height, capacity;
   let buffer1, buffer2;
   const damping = 0.96; // higher = longer waves
@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = height;
     buffer1 = new Int32Array(capacity).fill(0);
     buffer2 = new Int32Array(capacity).fill(0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
   }
 
   // --- Edge-only ripple injection ---
@@ -102,18 +104,34 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastScrollY = window.scrollY;
   function shiftBuffers(deltaY) {
     const shift = Math.floor(deltaY / res);
-    if (!shift) return;
+    if (shift === 0) return;
+  
+    const absShift = Math.abs(shift);
+    const rowSize = width;
+  
     if (shift > 0) {
-      for (let i = 0; i < capacity - (shift*width); i++) {
-        buffer1[i] = buffer1[i + shift*width];
-        buffer2[i] = buffer2[i + shift*width];
-      }
+      // Scrolling Down: Move data UP in the array
+      const moveAmount = (height - absShift) * rowSize;
+      const offset = absShift * rowSize;
+      
+      // We use .set() because it is much faster than a manual 'for' loop
+      buffer1.set(buffer1.subarray(offset, offset + moveAmount), 0);
+      buffer2.set(buffer2.subarray(offset, offset + moveAmount), 0);
+      
+      // Clear the "new" rows at the bottom
+      buffer1.fill(0, moveAmount);
+      buffer2.fill(0, moveAmount);
     } else {
-      const absShift = Math.abs(shift);
-      for (let i = capacity-1; i >= absShift*width; i--) {
-        buffer1[i] = buffer1[i - absShift*width];
-        buffer2[i] = buffer2[i - absShift*width];
-      }
+      // Scrolling Up: Move data DOWN in the array
+      const moveAmount = (height - absShift) * rowSize;
+      const offset = absShift * rowSize;
+      
+      buffer1.set(buffer1.subarray(0, moveAmount), offset);
+      buffer2.set(buffer2.subarray(0, moveAmount), offset);
+      
+      // Clear the "new" rows at the top
+      buffer1.fill(0, 0, offset);
+      buffer2.fill(0, 0, offset);
     }
   }
   window.addEventListener('scroll', () => {
