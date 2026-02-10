@@ -2,11 +2,6 @@
 @import "tailwindcss";
 
 :root {
-  /*--jelly-pink: #ff71ce;
-  --jelly-blue: #01cdfe;
-  --deep-ocean: #050614;
-  --wave-1: #0a7ea4;
-  --wave-2: #0d9488;*/
   --color-deep-twilight-50: #e6e7fe;
   --color-deep-twilight-100: #cecefd;
   --color-deep-twilight-200: #9c9efc;
@@ -119,6 +114,8 @@
   --sea-surface: var(--color-turquoise-surf-500);
   --sea-glow: var(--color-light-cyan-400);
   --sea-text: var(--color-blue-green-100);
+  --title-gradient-from: var(--color-deep-twilight-300);
+  --title-gradient-to: var(--color-light-cyan-500);
 }
 
 /* ============================= */
@@ -134,6 +131,10 @@ html {
       var(--color-deep-twilight-950) 100%
     );
   background-attachment: fixed;
+}
+
+h1 {
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.2));
 }
 
 .page-wrapper {
