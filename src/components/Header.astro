@@ -1,0 +1,41 @@
+---
+import DiscordIcon from './icons/Discord.astro';
+import GithubIcon from './icons/Github.astro';
+import InstagramIcon from './icons/Instagram.astro';
+---
+
+<nav class="sticky top-0 z-100 w-full">
+	<div class="glass glass-header border-b border-[#D9E4F5]">
+		<div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+			<a href="#top" class="font-display text-2xl leading-none tracking-tight text-[#4A4A4A] hover:text-[#82A7B9] transition-colors">
+				JellyJam
+			</a>
+
+			<div class="hidden md:flex items-center gap-6 font-secondary font-semibold text-sm uppercase tracking-wider text-[#4A4A4A]">
+				<a href="#about" class="hover:text-[#82A7B9] transition-colors">About</a>
+				<a href="#rules" class="hover:text-[#82A7B9] transition-colors">Rules</a>
+				<a href="#prizes" class="hover:text-[#82A7B9] transition-colors">Prizes</a>
+				<a href="#sponsors" class="hover:text-[#82A7B9] transition-colors">Sponsors</a>
+				<a href="#faq" class="hover:text-[#82A7B9] transition-colors">FAQ</a>
+			</div>
+
+			<div class="flex items-center gap-3 md:gap-5">
+				<div class="flex items-center gap-2 md:gap-3 text-[#5F7D95]">
+					<a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Instagram">
+						<InstagramIcon class="w-5 h-5" />
+					</a>
+					<a href="https://discord.com" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Discord">
+						<DiscordIcon class="w-5 h-5" />
+					</a>
+					<a href="https://github.com/ofknee/jellyjam" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="GitHub">
+						<GithubIcon class="w-5 h-5" />
+					</a>
+				</div>
+
+				<a href="#about" class="hidden sm:inline-flex px-4 py-2 rounded-full text-sm font-secondary font-semibold text-[#4A4A4A] border border-[#C5E7F1] hover:bg-[#C5E7F1]/30 transition-all duration-300">
+					Register
+				</a>
+			</div>
+		</div>
+	</div>
+</nav>
