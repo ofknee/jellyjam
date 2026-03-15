@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = Math.abs(buffer2[i]);
       if (val > 0.5) {
         const pos = i*4;
-        data[pos] = 1;      // R
-        data[pos+1] = 205;  // G
-        data[pos+2] = 254;  // B
+        data[pos]   = 130;  // R  glacier blue
+        data[pos+1] = 167;  // G
+        data[pos+2] = 185;  // B
         data[pos+3] = Math.min(255, val); // A
       }
     }

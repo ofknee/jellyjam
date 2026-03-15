@@ -1,372 +1,389 @@
----
+﻿---
 import MainLayout from '../layouts/MainLayout.astro';
 import DiscordIcon from '../components/icons/Discord.astro';
 import GithubIcon from '../components/icons/Github.astro';
 import InstagramIcon from '../components/icons/Instagram.astro';
 ---
 
-<MainLayout title="JellyJam 2026 | Underwater Game Jam">
+<MainLayout title="JellyJam 2026 | Leland CS Club">
+
+  <!-- Hero -->
   <section class="min-h-screen flex flex-col items-center justify-start text-center px-4 relative pt-0 mt-24">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-jelly-blue/20 blur-[120px] -z-10 animate-pulse"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-jelly-pink/15 blur-[120px] -z-10 animate-pulse" style="animation-delay: 1s;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-400/10 blur-[100px] -z-10 animate-wave"></div>
-    
-    <h1 
-      class="text-6xl md:text-8xl font-black mt-8 mb-8 bg-clip-text text-transparent leading-tight font-display tracking-tighter cursor-default select-none transition-all duration-500"
-      style="background-image: linear-gradient(to right, var(--title-gradient-from), var(--title-gradient-to));"
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-glacier-blue/15 blur-[120px] -z-10"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-olive-green/10 blur-[120px] -z-10"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#C5E7F1]/20 blur-[100px] -z-10 animate-wave"></div>
+
+    <h1
+      class="text-6xl md:text-8xl font-black mt-8 mb-6 bg-clip-text text-transparent leading-tight font-display tracking-tighter cursor-default select-none transition-all duration-500"
+      style="background-image: linear-gradient(135deg, var(--color-glacier-blue), var(--color-ice-blue));"
     >
-      ✨ Jellyfish Jam ✨
+      Jelly Jam
     </h1>
-    <p class="text-lg md:text-xl text-blue-200/70 max-w-2xl font-light tracking-wide mb-12">A 12-hour game jam at Leland High School.</p>
-    
-    <div class="glass px-8 py-3 rounded-full text-sm font-medium text-jelly-blue tracking-wider hover:bg-jelly-blue/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(1,205,254,0.5)] active:scale-95 transition-all duration-300 cursor-pointer select-none group water-solid">
-      <span class="inline-block group-hover:scale-125 transition-transform duration-300">🎮</span> GAME START: April Something, 2026
-    </div>
+    <p class="text-base md:text-lg text-[#5F7D95] max-w-xl font-light tracking-wide mb-2">A 12-hour game jam at Leland High School.</p>
+    <p class="text-sm text-[#A3C0D3] mb-12 font-secondary">Spring 2026 · Leland CS Club</p>
+
+    <a href="#about" class="glass px-8 py-3 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
+      Register — April 2026
+    </a>
   </section>
-  <!-- About: Three features section -->
+
+  <!-- About -->
   <section id="about" class="max-w-6xl mx-auto py-40 px-6 mt-24">
-    <!-- Section Title -->
     <div class="text-center mb-20">
-      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-0">
-        About JellyJam
+      <p class="text-xs uppercase tracking-widest text-[#A3C0D3] mb-4 font-secondary">About</p>
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
+        What is JellyJam?
       </h2>
-      <p class="text-blue-200/60 max-w-2xl mx-auto">
-        A squishy, creative game jam where indie devs dive into ocean-inspired ideas together.
+      <p class="text-[#A3C0D3] max-w-2xl mx-auto mt-4">
+        A weekend game jam for high school students. Build something, meet people, learn stuff.
       </p>
     </div>
-  
-    <!-- Cards Grid -->
+
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] water-solid">
-        <div class="text-jelly-pink text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 origin-left">🌊</div>
-        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">The Squish</h3>
-        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-          Flow together with a community of indie devs. Create games that feel fluid and fun. All skill levels welcome in our ocean!
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">01</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">The Jam</h3>
+        <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+          12 hours, one theme, endless ideas. Work solo or with a team — all skill levels welcome.
         </p>
       </div>
-  
-      <div class="card group-hover:shadow-[0_0_30px_rgba(1,205,254,0.3)] water-solid">
-        <div class="text-jelly-blue text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 origin-left">🐙</div>
-        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-blue transition-colors duration-300">The Theme</h3>
-        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-          Dive into "Marine". Interpret it mechanically, narratively, or visually. Jellies included, but let your creativity swim free!
+
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">02</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">The Theme</h3>
+        <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+          The theme is revealed at kickoff. Interpret it however you want — mechanically, visually, narratively.
         </p>
       </div>
-  
-      <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] water-solid">
-        <div class="text-jelly-pink text-6xl mb-8 font-black tracking-tighter font-display group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 origin-left">🏆</div>
-        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">The Loot</h3>
-        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-          Top games get surfaced on this website and win some prizes! Rising stars of the game jam ocean!
+
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">03</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">The Awards</h3>
+        <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+          Top games get showcased on this site and win prizes. Everyone plays and rates each other's games.
         </p>
       </div>
     </div>
   </section>
 
-
-  <section id="sponsors" class="py-28 border-y border-white/10 mt-24">
-    <p class="text-center text-xs uppercase tracking-widest mb-16 opacity-60 font-semibold">🌊 Currents of Support 🌊</p>
+  <!-- Sponsors -->
+  <section id="sponsors" class="py-28 border-y border-[#D9E4F5] mt-24">
+    <p class="text-center text-xs uppercase tracking-widest mb-16 text-[#A3C0D3] font-secondary">Sponsors</p>
     <div class="max-w-5xl mx-auto px-6 flex flex-wrap justify-center gap-12 grayscale opacity-70 hover:opacity-100 transition-all duration-300">
-      <img src="/logos/unity.svg" alt="Sponsor" class="h-8 hover:scale-110 transition-transform" />
-      <img src="/logos/github.svg" alt="Sponsor" class="h-8 hover:scale-110 transition-transform" />
-      <img src="/logos/pico8.svg" alt="Sponsor" class="h-8 hover:scale-110 transition-transform" />
+      <img src="/logos/unity.svg" alt="Unity" class="h-8 hover:scale-110 transition-transform" />
+      <img src="/logos/github.svg" alt="GitHub" class="h-8 hover:scale-110 transition-transform" />
+      <img src="/logos/pico8.svg" alt="PICO-8" class="h-8 hover:scale-110 transition-transform" />
     </div>
   </section>
-  
-  <section id="rules" class="py-40 bg-gradient-to-b from-transparent via-jelly-blue/5 to-transparent mt-24">
+
+  <!-- Rules -->
+  <section id="rules" class="py-40 bg-linear-to-b from-transparent via-[#C5E7F1]/8 to-transparent mt-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-20">
-        <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-0">
-          Water Rules
+        <p class="text-xs uppercase tracking-widest text-[#A3C0D3] mb-4 font-secondary">Rules</p>
+        <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
+          The Rules
         </h2>
-        <p class="text-blue-200/60 max-w-2xl mx-auto">
-          Keep our ocean clean and kind.
-        </p>
+        <p class="text-[#A3C0D3] max-w-2xl mx-auto mt-4">Short and simple.</p>
       </div>
-    
+
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] water-solid">
-          <div class="inline-flex items-center justify-center px-3 py-2 mb-8 rounded-full bg-gradient-to-br from-jelly-pink/40 to-jelly-pink/20 font-black text-2xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">💧</div>
-          <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">Fresh Water Only</h3>
-          <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-            All code and assets must be made during the jam or be CC0. Keep it clean and original!
+        <div class="card group">
+          <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">01</p>
+          <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Original Work</h3>
+          <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+            All code and assets must be made during the jam, or be CC0 licensed. No pre-made game templates.
           </p>
         </div>
-    
-        <div class="card group-hover:shadow-[0_0_30px_rgba(1,205,254,0.3)] water-solid">
-          <div class="inline-flex items-center justify-center px-3 py-2 mb-8 rounded-full bg-gradient-to-br from-jelly-blue/40 to-jelly-blue/20 font-black text-2xl group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">✓</div>
-          <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-blue transition-colors duration-300">Don't Sting</h3>
-          <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-            Be kind and supportive. Our ocean is friendliest when we lift each other up!
+
+        <div class="card group">
+          <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">02</p>
+          <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Be Respectful</h3>
+          <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+            Be kind to everyone. We're here to make games and have fun.
           </p>
         </div>
       </div>
     </div>
   </section>
-  
+
+  <!-- Location -->
   <section id="location" class="py-40">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-20">
       <div class="flex-1">
-        <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-8">Global Currents</h2>
-        <p class="text-lg text-blue-200/70 mb-12 leading-relaxed hover:text-blue-200/90 transition-colors duration-300">
-          JellyJam 2026 is <span class="font-semibold text-white">fully in person</span>, a once in a lifetime opportunity to experience, learn, and explore the vibrant world of indie game development.
+        <p class="text-xs uppercase tracking-widest text-[#A3C0D3] mb-4 font-secondary">Where & When</p>
+        <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-8">In Person</h2>
+        <p class="text-lg text-[#5F7D95] mb-12 leading-relaxed">
+          JellyJam 2026 is <span class="font-semibold text-[#4A4A4A]">fully in person</span> at Leland High School. One day, one venue, one theme.
         </p>
         <div class="space-y-4">
-          <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-white/12 hover:shadow-[0_0_20px_rgba(1,205,254,0.2)] hover:translate-x-2 transition-all duration-300 group cursor-pointer">
-            <span class="px-4 py-2 bg-jelly-blue/20 rounded-lg font-medium text-jelly-blue text-sm group-hover:bg-jelly-blue/40 transition-colors duration-300">Location</span>
-            <span class="font-semibold group-hover:text-jelly-blue transition-colors duration-300">Vineland Community Room (tentative)</span>
+          <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-[#F8FAFC]/60 hover:translate-x-2 transition-all duration-300 group cursor-pointer">
+            <span class="px-4 py-2 bg-[#C5E7F1]/40 rounded-lg font-secondary font-semibold text-[#82A7B9] text-sm">Location</span>
+            <span class="font-semibold text-[#4A4A4A]">Vineland Community Room (tentative)</span>
           </div>
-          <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-white/12 hover:shadow-[0_0_20px_rgba(1,205,254,0.2)] hover:translate-x-2 transition-all duration-300 group cursor-pointer">
-            <span class="px-4 py-2 bg-jelly-blue/20 rounded-lg font-medium text-jelly-blue text-sm group-hover:bg-jelly-blue/40 transition-colors duration-300">Time</span>
-            <span class="font-semibold group-hover:text-jelly-blue transition-colors duration-300">UTC-0 (Universal Time)</span>
+          <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-[#F8FAFC]/60 hover:translate-x-2 transition-all duration-300 group cursor-pointer">
+            <span class="px-4 py-2 bg-[#C5E7F1]/40 rounded-lg font-secondary font-semibold text-[#82A7B9] text-sm">Date</span>
+            <span class="font-semibold text-[#4A4A4A]">April 2026 — exact date TBD</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
+  <!-- Team -->
   <section id="team" class="max-w-6xl mx-auto py-40 px-6">
     <div class="text-center mb-20">
-      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-0">The Tentacles</h2>
-      <p class="text-blue-200/70 text-lg font-light">Meet the team making waves in the ocean.</p>
+      <p class="text-xs uppercase tracking-widest text-[#A3C0D3] mb-4 font-secondary">Organizers</p>
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">The Team</h2>
+      <p class="text-[#5F7D95] text-lg font-light mt-4">The people behind JellyJam.</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Captain Jellyfish</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Lead Organizer</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Captain Jellyfish</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Lead Organizer</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marina" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marina" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Marina Waters</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Co-Organizer</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Marina Waters</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Co-Organizer</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Coral" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Coral" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Coral Reef</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Community Manager</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Coral Reef</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Community</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Octane" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Octane" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Octane Dev</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Tech Lead</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Octane Dev</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Tech Lead</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Storm" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Storm" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Storm Abyss</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Operations</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Storm Abyss</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Operations</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Wave" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Wave" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Wave Rider</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Marketing</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Wave Rider</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Marketing</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Pulse" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Pulse" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Pulse Deep</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Design Lead</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Pulse Deep</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Design</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Echo" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Echo" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Echo Fin</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Sound Design</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Echo Fin</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Sound</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Surge" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Surge" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Surge Wave</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Community</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Surge Wave</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Community</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lumina" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lumina" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Lumina Glow</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Sponsorships</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Lumina Glow</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Sponsorships</p>
       </div>
       <div class="text-center group cursor-pointer">
-        <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-jelly-blue to-jelly-pink p-1 mb-4 group-hover:shadow-[0_0_30px_rgba(1,205,254,0.5)] group-hover:scale-110 transition-all duration-300">
-          <div class="w-full h-full rounded-full bg-deep-ocean group-hover:scale-95 transition">
-             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tide" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tide" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display uppercase tracking-tighter group-hover:text-jelly-pink transition-colors duration-300">Tide Flow</h4>
-        <p class="text-xs text-jelly-blue font-mono group-hover:text-jelly-blue/80 transition-colors duration-300">Event Coordination</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Tide Flow</h4>
+        <p class="text-xs text-[#A3C0D3] font-secondary mt-1">Events</p>
       </div>
     </div>
   </section>
-  
+
+  <!-- Prizes -->
   <section id="prizes" class="max-w-6xl mx-auto py-40 px-6 mt-24">
     <div class="text-center mb-20">
-      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-0">
+      <p class="text-xs uppercase tracking-widest text-[#A3C0D3] mb-4 font-secondary">Awards</p>
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
         Prizes
       </h2>
-      <p class="text-blue-200/60 max-w-2xl mx-auto">
-        Win incredible rewards for your creativity and hard work.
-      </p>
+      <p class="text-[#A3C0D3] max-w-2xl mx-auto mt-4">Rewards for great work.</p>
     </div>
-  
+
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] water-solid">
-        <div class="inline-flex items-center justify-center px-3 py-2 mb-8 rounded-full bg-gradient-to-br from-jelly-pink/40 to-jelly-pink/20 font-black text-2xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">🥇</div>
-        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">1st</h3>
-        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-          1st place, yay!
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">1st Place</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Gold</h3>
+        <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+          TBD — check back soon.
         </p>
       </div>
-  
-      <div class="card group-hover:shadow-[0_0_30px_rgba(1,205,254,0.3)] water-solid">
-        <div class="inline-flex items-center justify-center px-3 py-2 mb-8 rounded-full bg-gradient-to-br from-jelly-blue/40 to-jelly-blue/20 font-black text-2xl group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">🥈</div>
-        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-blue transition-colors duration-300">2nd</h3>
-        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-          2nd place woahh
+
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">2nd Place</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Silver</h3>
+        <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+          TBD — check back soon.
         </p>
       </div>
-  
-      <div class="card group-hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] water-solid">
-        <div class="inline-flex items-center justify-center px-3 py-2 mb-8 rounded-full bg-gradient-to-br from-jelly-pink/40 to-jelly-pink/20 font-black text-2xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">🥉</div>
-        <h3 class="text-2xl font-bold font-display mb-4 group-hover:text-jelly-pink transition-colors duration-300">3rd</h3>
-        <p class="text-blue-200/60 leading-relaxed group-hover:text-blue-200/80 transition-colors duration-300">
-          3rd place. good job!
+
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#A3C0D3] mb-6">3rd Place</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Bronze</h3>
+        <p class="text-[#A3C0D3] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+          TBD — check back soon.
         </p>
       </div>
     </div>
   </section>
-  
+
+  <!-- FAQ -->
   <section id="faq" class="max-w-4xl mx-auto py-40 px-6 mt-24">
     <div class="text-center mb-20">
-      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-jelly-pink mb-0">Deep Dive (FAQ)</h2>
-      <p class="text-blue-200/70 text-lg font-light">Curious about how this all works? Let's answer your questions.</p>
+      <p class="text-xs uppercase tracking-widest text-[#A3C0D3] mb-4 font-secondary">Questions</p>
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">FAQ</h2>
+      <p class="text-[#5F7D95] text-lg font-light mt-4">Answers to common questions.</p>
     </div>
-    
+
     <div class="grid gap-6">
-      <details class="glass rounded-2xl group cursor-pointer hover:bg-white/12 hover:shadow-[0_0_30px_rgba(1,205,254,0.25)] transition-all duration-300 overflow-hidden water-solid">
-        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-white group-open:text-jelly-blue transition-colors duration-300 select-none p-8">
+      <details class="glass rounded-2xl group cursor-pointer hover:bg-[#F8FAFC]/60 hover:shadow-[0_0_24px_rgba(197,231,241,0.4)] transition-all duration-300 overflow-hidden">
+        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-[#4A4A4A] group-open:text-[#82A7B9] transition-colors duration-300 select-none p-8">
           What is a game jam?
-          <span class="group-open:rotate-180 transition-transform duration-300 text-jelly-blue group-hover:scale-125 inline-block">↓</span>
+          <span class="group-open:rotate-180 transition-transform duration-300 text-[#82A7B9] inline-block">↓</span>
         </summary>
         <div class="px-8 pb-8">
-          <p class="text-blue-200/70 leading-relaxed group-open:text-blue-200/90 transition-colors duration-300">
-            A game jam is an event where you build a game from scratch in a short time period! It's all about creativity, teamwork, and having fun while learning new skills.
+          <p class="text-[#5F7D95] leading-relaxed">
+            A game jam is an event where you build a game from scratch in a short period of time. It's about creativity, learning, and having fun.
           </p>
         </div>
       </details>
-  
-      <details class="glass rounded-2xl group cursor-pointer hover:bg-white/12 hover:shadow-[0_0_30px_rgba(1,205,254,0.25)] transition-all duration-300 overflow-hidden water-solid">
-        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-white group-open:text-jelly-blue transition-colors duration-300 select-none p-8">
+
+      <details class="glass rounded-2xl group cursor-pointer hover:bg-[#F8FAFC]/60 hover:shadow-[0_0_24px_rgba(197,231,241,0.4)] transition-all duration-300 overflow-hidden">
+        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-[#4A4A4A] group-open:text-[#82A7B9] transition-colors duration-300 select-none p-8">
           Am I eligible to participate?
-          <span class="group-open:rotate-180 transition-transform duration-300 text-jelly-blue group-hover:scale-125 inline-block">↓</span>
+          <span class="group-open:rotate-180 transition-transform duration-300 text-[#82A7B9] inline-block">↓</span>
         </summary>
         <div class="px-8 pb-8">
-          <p class="text-blue-200/70 leading-relaxed group-open:text-blue-200/90 transition-colors duration-300">
-            If you're a teenager (13-18), you're eligible! No prior experience required - just bring your enthusiasm and willingness to learn.
+          <p class="text-[#5F7D95] leading-relaxed">
+            If you're a teenager (13–18), you're in. No prior experience needed.
           </p>
         </div>
       </details>
 
-      <details class="glass rounded-2xl group cursor-pointer hover:bg-white/12 hover:shadow-[0_0_30px_rgba(1,205,254,0.25)] transition-all duration-300 overflow-hidden water-solid">
-        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-white group-open:text-jelly-blue transition-colors duration-300 select-none p-8">
+      <details class="glass rounded-2xl group cursor-pointer hover:bg-[#F8FAFC]/60 hover:shadow-[0_0_24px_rgba(197,231,241,0.4)] transition-all duration-300 overflow-hidden">
+        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-[#4A4A4A] group-open:text-[#82A7B9] transition-colors duration-300 select-none p-8">
           What if I don't have any experience?
-          <span class="group-open:rotate-180 transition-transform duration-300 text-jelly-blue group-hover:scale-125 inline-block">↓</span>
+          <span class="group-open:rotate-180 transition-transform duration-300 text-[#82A7B9] inline-block">↓</span>
         </summary>
         <div class="px-8 pb-8">
-          <p class="text-blue-200/70 leading-relaxed group-open:text-blue-200/90 transition-colors duration-300">
-            Perfect! Game jams are designed for beginners. You'll have workshops, mentors, and teammates to help you every step of the way.
+          <p class="text-[#5F7D95] leading-relaxed">
+            That's totally fine. There'll be workshops and mentors throughout the day to help you get unstuck.
+          </p>
+        </div>
       </details>
 
-      <details class="glass rounded-2xl group cursor-pointer hover:bg-white/12 hover:shadow-[0_0_30px_rgba(1,205,254,0.25)] transition-all duration-300 overflow-hidden water-solid">
-        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-white group-open:text-jelly-blue transition-colors duration-300 select-none p-8">
+      <details class="glass rounded-2xl group cursor-pointer hover:bg-[#F8FAFC]/60 hover:shadow-[0_0_24px_rgba(197,231,241,0.4)] transition-all duration-300 overflow-hidden">
+        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-[#4A4A4A] group-open:text-[#82A7B9] transition-colors duration-300 select-none p-8">
           Is this free?
-          <span class="group-open:rotate-180 transition-transform duration-300 text-jelly-blue group-hover:scale-125 inline-block">↓</span>
+          <span class="group-open:rotate-180 transition-transform duration-300 text-[#82A7B9] inline-block">↓</span>
         </summary>
         <div class="px-8 pb-8">
-          <p class="text-blue-200/70 leading-relaxed group-open:text-blue-200/90 transition-colors duration-300">
-            Yes! Everything is completely free - venue, food, swag, workshops, and prizes. All costs are covered, so you can focus on creating.
+          <p class="text-[#5F7D95] leading-relaxed">
+            Yes, everything is free — venue, food, workshops, prizes. Just show up.
+          </p>
+        </div>
       </details>
 
-      <details class="glass rounded-2xl group cursor-pointer hover:bg-white/12 hover:shadow-[0_0_30px_rgba(1,205,254,0.25)] transition-all duration-300 overflow-hidden water-solid">
-        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-white group-open:text-jelly-blue transition-colors duration-300 select-none p-8">
+      <details class="glass rounded-2xl group cursor-pointer hover:bg-[#F8FAFC]/60 hover:shadow-[0_0_24px_rgba(197,231,241,0.4)] transition-all duration-300 overflow-hidden">
+        <summary class="text-lg font-bold font-display list-none flex justify-between items-center text-[#4A4A4A] group-open:text-[#82A7B9] transition-colors duration-300 select-none p-8">
           What do I need to bring?
-          <span class="group-open:rotate-180 transition-transform duration-300 text-jelly-blue group-hover:scale-125 inline-block">↓</span>
+          <span class="group-open:rotate-180 transition-transform duration-300 text-[#82A7B9] inline-block">↓</span>
         </summary>
         <div class="px-8 pb-8">
-          <p class="text-blue-200/70 leading-relaxed group-open:text-blue-200/90 transition-colors duration-300">
-            Just bring yourself, a laptop, charger, and any personal items you need. We'll provide food, drinks, and everything else!
+          <p class="text-[#5F7D95] leading-relaxed">
+            A laptop and a charger. We'll handle the rest.
+          </p>
+        </div>
       </details>
     </div>
   </section>
 
-  
-  <footer class="mt-20 border-t border-white/10 bg-deep-ocean/50 backdrop-blur-md">
+  <!-- Footer -->
+  <footer class="mt-20 border-t border-[#D9E4F5] bg-[#F8FAFC]/80 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-6 py-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
-        
+
         <div>
-          <div class="text-2xl font-black italic text-jelly-blue mb-2">🪼 JELLYJAM 2026</div>
-          <p class="text-blue-200/50 text-sm">
-            &copy; {new Date().getFullYear()} Jellyfish Jam. <br />
-            All rights reserved to their respective creators.
+          <div class="text-2xl font-black font-display text-[#82A7B9] mb-2">JellyJam 2026</div>
+          <p class="text-[#A3C0D3] text-sm">
+            &copy; {new Date().getFullYear()} Leland CS Club.<br />
+            All rights reserved.
           </p>
         </div>
-  
-        <div class="flex justify-center items-center gap-8">
+
+        <div class="flex justify-center items-center">
           <div class="flex gap-4 text-lg">
-            <a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="text-blue-200/60 hover:text-(--color-deep-twilight-300) transition-all hover:scale-110 duration-300">
+            <a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="text-[#A3C0D3] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
               <InstagramIcon class="w-6 h-6" />
             </a>
-            <a href="https://discord.com" target="_blank" class="text-blue-200/60 hover:text-(--color-deep-twilight-300) transition-all hover:scale-110 duration-300">
+            <a href="https://discord.com" target="_blank" class="text-[#A3C0D3] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
               <DiscordIcon class="w-6 h-6" />
             </a>
-            <a href="https://github.com/ofknee/jellyjam" target="_blank" class="text-blue-200/60 hover:text-(--color-deep-twilight-300) transition-all hover:scale-110 duration-300">
+            <a href="https://github.com/ofknee/jellyjam" target="_blank" class="text-[#A3C0D3] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
               <GithubIcon class="w-6 h-6" />
             </a>
           </div>
         </div>
-  
+
         <div class="text-center md:text-right">
-          <p class="text-sm font-medium text-blue-200/70">Hosted at Leland High School</p>
-          <p class="text-xs text-blue-200/40 mt-1">Dive deep, dream big, and keep the ocean clean.</p>
-          <a href="#" class="inline-block mt-4 text-xs uppercase tracking-widest text-jelly-blue hover:text-white transition-colors">↑ Return to Surface</a>
+          <p class="text-sm font-secondary font-medium text-[#5F7D95]">Leland High School</p>
+          <p class="text-xs text-[#A3C0D3] mt-1">San Jose, CA</p>
+          <a href="#" class="inline-block mt-4 text-xs uppercase tracking-widest text-[#82A7B9] hover:text-[#4A4A4A] transition-colors font-secondary">↑ Back to top</a>
         </div>
-  
+
       </div>
     </div>
   </footer>
+
 </MainLayout>
+
