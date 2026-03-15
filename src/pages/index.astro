@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL;
 <MainLayout title="JellyJam 2026 | Leland CS Club">
 
   <!-- Hero -->
-  <section id="top" class="min-h-screen flex flex-col items-center justify-start text-center px-4 relative pt-0 mt-24">
+  <section id="top" class="min-h-fit flex flex-col items-center justify-start text-center px-4 relative pt-0 mt-24">
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-glacier-blue/15 blur-[120px] -z-10"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-olive-green/10 blur-[120px] -z-10"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#C5E7F1]/20 blur-[100px] -z-10 animate-wave"></div>
@@ -20,11 +20,15 @@ const base = import.meta.env.BASE_URL;
     >
       Jelly Jam
     </h1>
-    <p class="text-base md:text-lg text-[#5F7D95] max-w-xl font-light tracking-wide mb-2">A 12-hour game jam at Leland High School.</p>
+    <p class="text-base md:text-lg text-[#5F7D95] max-w-xl font-light tracking-wide mb-2">A 12-hour game jam in San Jose (Location TBD).</p>
     <p class="text-sm text-[#5F7D95] mb-12 font-secondary">Spring 2026 · Leland CS Club</p>
 
-    <a href="#about" class="glass px-8 py-3 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
-      Register — April 2026
+    <a href="https://forms.fillout.com/t/taUP71dZcYus" class="glass px-8 py-3 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
+      Register — April 18, 2026
+    </a>
+
+     <a href="mailto:lhshacks2026@gmail.com" class="mt-4 glass px-6 py-2 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
+      Contact Us
     </a>
   </section>
 
@@ -36,7 +40,7 @@ const base = import.meta.env.BASE_URL;
         What is JellyJam?
       </h2>
       <p class="text-[#5F7D95] max-w-2xl mx-auto mt-4">
-        A weekend game jam for high school students. Build something, meet people, learn stuff.
+        A day-long hackathon for middle and high school students.
       </p>
     </div>
 
@@ -53,7 +57,7 @@ const base = import.meta.env.BASE_URL;
         <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">02</p>
         <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">The Theme</h3>
         <p class="text-[#5F7D95] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
-          The theme is revealed at kickoff. Interpret it however you want — mechanically, visually, narratively.
+          The theme is marine conservation! ...
         </p>
       </div>
 
@@ -67,15 +71,118 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- Sponsors -->
-  <section id="sponsors" class="py-28 border-y border-[#D9E4F5] mt-24">
-    <p class="text-center text-xs uppercase tracking-widest mb-16 text-[#5F7D95] font-secondary">Sponsors</p>
-    <div class="max-w-5xl mx-auto px-6 flex flex-wrap justify-center gap-12 grayscale opacity-70 hover:opacity-100 transition-all duration-300">
-      <img src={`${base}logos/unity.svg`} alt="Unity" class="h-8 hover:scale-110 transition-transform" />
-      <img src={`${base}logos/github.svg`} alt="GitHub" class="h-8 hover:scale-110 transition-transform" />
-      <img src={`${base}logos/pico8.svg`} alt="PICO-8" class="h-8 hover:scale-110 transition-transform" />
+<!-- Schedule -->
+<section id="schedule" class="py-40 bg-linear-to-b from-transparent via-[#C5E7F1]/8 to-transparent mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <p class="text-xs uppercase tracking-widest text-[#5F7D95] mb-4 font-secondary">Day Of</p>
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
+        The Schedule
+      </h2>
+      <p class="text-[#5F7D95] max-w-2xl mx-auto mt-4">One day. Make something awesome.</p>
     </div>
-  </section>
+
+    <div class="max-w-3xl mx-auto flex flex-col gap-4">
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">9:00 – 9:45</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Check In</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Get settled, meet your team, and get ready to build.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">10:00 – 11:00</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Game Dev / Web Deb Workshops</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Details.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">12:00 – 1:00</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Lunch</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Details.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">1:00 – 2:00</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Art / UI Workshops</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Details.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">2:30 – 3:00</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Fun Activities</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Take a break and have some fun mid-jam.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">4:30 – 5:30</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Submissions</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Wrap it up and submit your game before time's up.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6 border-[#769966]/30">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">5:30 – 6:15</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#769966] group-hover:text-[#82A7B9] transition-colors duration-300">Presentations</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Show off what you made to everyone in the room.</p>
+        </div>
+      </div>
+
+      <div class="card group flex items-start gap-6">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">6:15 – 7:00</p>
+        <div>
+          <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Judging + Closing + Announcements</h3>
+          <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">Description.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors -->
+<!-- <section id="sponsors" class="py-40 bg-linear-to-b from-transparent via-[#C5E7F1]/8 to-transparent mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <p class="text-xs uppercase tracking-widest text-[#5F7D95] mb-4 font-secondary">Sponsors</p>
+      <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
+        Our Sponsors
+      </h2>
+      <p class="text-[#5F7D95] max-w-2xl mx-auto mt-4">Thanks to those who make JellyJam possible.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">01</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Unity</h3>
+        <img src={`${base}logos/unity.svg`} alt="Unity" class="h-8 grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </div>
+
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">02</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">GitHub</h3>
+        <img src={`${base}logos/github.svg`} alt="GitHub" class="h-8 grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </div>
+
+      <div class="card group">
+        <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">03</p>
+        <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">PICO-8</h3>
+        <img src={`${base}logos/pico8.svg`} alt="PICO-8" class="h-8 grayscale group-hover:grayscale-0 transition-all duration-300" />
+      </div>
+    </div>
+  </div>
+</section> -->
 
   <!-- Rules -->
   <section id="rules" class="py-40 bg-linear-to-b from-transparent via-[#C5E7F1]/8 to-transparent mt-24">
@@ -91,17 +198,25 @@ const base = import.meta.env.BASE_URL;
       <div class="grid md:grid-cols-2 gap-8">
         <div class="card group">
           <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">01</p>
-          <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Original Work</h3>
+          <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Originality</h3>
           <p class="text-[#5F7D95] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
-            All code and assets must be made during the jam, or be CC0 licensed. No pre-made game templates.
+            All code and assets must be made during the hackathon, or be CC0 licensed. No pre-made templates are allowed.
           </p>
         </div>
 
         <div class="card group">
           <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">02</p>
+          <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Teams</h3>
+          <p class="text-[#5F7D95] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
+            Participate in teams of up to 3 people, or go solo.
+          </p>
+        </div>
+
+        <div class="card group">
+          <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mb-6">03</p>
           <h3 class="text-2xl font-bold font-display mb-4 text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">Be Respectful</h3>
           <p class="text-[#5F7D95] leading-relaxed group-hover:text-[#5F7D95] transition-colors duration-300">
-            Be kind to everyone. We're here to make games and have fun.
+            Be kind to everyone.
           </p>
         </div>
       </div>
@@ -115,127 +230,146 @@ const base = import.meta.env.BASE_URL;
         <p class="text-xs uppercase tracking-widest text-[#5F7D95] mb-4 font-secondary">Where & When</p>
         <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-8">In Person</h2>
         <p class="text-lg text-[#5F7D95] mb-12 leading-relaxed">
-          JellyJam 2026 is <span class="font-semibold text-[#4A4A4A]">fully in person</span> at Leland High School. One day, one venue, one theme.
+          JellyJam 2026 is <span class="font-semibold text-[#4A4A4A]">fully in person</span> at [VENUE TBD]. One day, one venue, one theme.
         </p>
         <div class="space-y-4">
           <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-[#F8FAFC]/60 hover:translate-x-2 transition-all duration-300 group cursor-pointer">
             <span class="px-4 py-2 bg-[#C5E7F1]/40 rounded-lg font-secondary font-semibold text-[#82A7B9] text-sm">Location</span>
-            <span class="font-semibold text-[#4A4A4A]">Vineland Community Room (tentative)</span>
+            <span class="font-semibold text-[#4A4A4A]">Location TBD</span>
           </div>
           <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-[#F8FAFC]/60 hover:translate-x-2 transition-all duration-300 group cursor-pointer">
             <span class="px-4 py-2 bg-[#C5E7F1]/40 rounded-lg font-secondary font-semibold text-[#82A7B9] text-sm">Date</span>
-            <span class="font-semibold text-[#4A4A4A]">April 2026 — exact date TBD</span>
+            <span class="font-semibold text-[#4A4A4A]">April 18, 2026</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Team -->
+ <!-- Team -->
   <section id="team" class="max-w-6xl mx-auto py-40 px-6">
     <div class="text-center mb-20">
       <p class="text-xs uppercase tracking-widest text-[#5F7D95] mb-4 font-secondary">Organizers</p>
       <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">The Team</h2>
-      <p class="text-[#5F7D95] text-lg font-light mt-4">The people behind JellyJam.</p>
+      <p class="text-[#5F7D95] text-lg font-light mt-4">Meet the people behind JellyJam.</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+    <!-- Row 1: 4 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center mb-8">
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/catherine.webp`} alt="Catherine Wang" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Captain Jellyfish</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Catherine Wang</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Lead Organizer</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marina" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/avni.webp`} alt="Avni Harsh" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Marina Waters</h4>
-        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Co-Organizer</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Avni Harsh</h4>
+        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Lead Organizer</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Coral" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/maggie.jpg`} alt="Maggie Shen" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Coral Reef</h4>
-        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Community</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Maggie Shen</h4>
+        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Website Dev</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Octane" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/eric.webp`} alt="Eric Ge" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Octane Dev</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Eric Ge</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Tech Lead</p>
       </div>
+    </div>
+
+    <!-- Row 2: 4 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center mb-8">
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Storm" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/agastya.webp`} alt="Agastya Kondamuri" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Storm Abyss</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Agastya Kondamuri</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Operations</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Wave" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/stephen.webp`} alt="Stephen King" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Wave Rider</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Stephen King</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Marketing</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Pulse" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/anisha.webp`} alt="Anisha Patil" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Pulse Deep</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Anisha Patil</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Design</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Echo" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/rosina.webp`} alt="Rosina Lu" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Echo Fin</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Rosina Lu</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Sound</p>
       </div>
+    </div>
+
+    <!-- Row 3: 4 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Surge" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/yashika.webp`} alt="Yashika Agarwal" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Surge Wave</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Yashika Agarwal</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Community</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lumina" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/katherine.webp`} alt="Katherine Zhu" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Lumina Glow</h4>
-        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Sponsorships</p>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Katherine Zhu</h4>
+        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Events</p>
       </div>
       <div class="text-center group cursor-pointer">
         <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
           <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tide" alt="Team member" class="group-hover:scale-110 transition-transform duration-300" />
+            <img src={`${base}team_photos/sophia.webp`} alt="Sophia Hao" class="group-hover:scale-110 transition-transform duration-300" />
           </div>
         </div>
-        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Tide Flow</h4>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Sophia Hao</h4>
+        <p class="text-xs text-[#5F7D95] font-secondary mt-1">Events</p>
+      </div>
+      <div class="text-center group cursor-pointer">
+        <div class="w-32 h-32 mx-auto rounded-full bg-linear-to-tr from-[#82A7B9] to-[#C5E7F1] p-1 mb-4 group-hover:shadow-[0_0_24px_rgba(197,231,241,0.6)] group-hover:scale-110 transition-all duration-300">
+          <div class="w-full h-full rounded-full bg-[#F8FAFC] group-hover:scale-95 transition overflow-hidden">
+            <img src={`${base}team_photos/serena.webp`} alt="Serena Ni" class="group-hover:scale-110 transition-transform duration-300" />
+          </div>
+        </div>
+        <h4 class="font-bold font-display tracking-tighter group-hover:text-[#82A7B9] transition-colors duration-300">Serena Ni</h4>
         <p class="text-xs text-[#5F7D95] font-secondary mt-1">Events</p>
       </div>
     </div>
@@ -367,7 +501,7 @@ const base = import.meta.env.BASE_URL;
             <a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
               <InstagramIcon class="w-6 h-6" />
             </a>
-            <a href="https://discord.com" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
+            <a href="https://discord.gg/CRkvFvxY" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
               <DiscordIcon class="w-6 h-6" />
             </a>
             <a href="https://github.com/ofknee/jellyjam" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
