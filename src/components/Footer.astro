@@ -1,0 +1,44 @@
+---
+
+import '../styles/global.css';
+
+import DiscordIcon from './icons/Discord.astro';
+import GithubIcon from './icons/Github.astro';
+import InstagramIcon from './icons/Instagram.astro';
+---
+<!-- Footer -->
+<footer class="mt-20 border-t border-[#D9E4F5] bg-[#F8FAFC]/80 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+
+      <div>
+        <div class="text-2xl font-black font-display text-[#82A7B9] mb-2">JellyJam 2026</div>
+        <p class="text-[#5F7D95] text-sm">
+          &copy; {new Date().getFullYear()} Leland CS Club.<br />
+          All rights reserved.
+        </p>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <div class="flex gap-4 text-lg">
+          <a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
+            <InstagramIcon class="w-6 h-6" />
+          </a>
+          <a href="https://discord.gg/CRkvFvxY" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
+            <DiscordIcon class="w-6 h-6" />
+          </a>
+          <a href="https://github.com/ofknee/jellyjam" target="_blank" class="text-[#5F7D95] hover:text-[#82A7B9] transition-all hover:scale-110 duration-300">
+            <GithubIcon class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center md:text-right">
+        <p class="text-sm font-secondary font-medium text-[#5F7D95]">Leland High School</p>
+        <p class="text-xs text-[#5F7D95] mt-1">San Jose, CA</p>
+        <a href="#top" class="inline-block mt-4 text-xs uppercase tracking-widest text-[#82A7B9] hover:text-[#4A4A4A] transition-colors font-secondary">↑ Back to top</a>
+      </div>
+
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+<!-- Hero -->
+<section id="top" class="min-h-fit flex flex-col items-center justify-start text-center px-4 relative pt-0 mt-24">
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-glacier-blue/15 blur-[120px] -z-10"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-olive-green/10 blur-[120px] -z-10"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#C5E7F1]/20 blur-[100px] -z-10 animate-wave"></div>
+
+  <h1
+  class="text-6xl md:text-8xl font-black mt-8 mb-6 bg-clip-text text-transparent leading-tight font-display tracking-tighter cursor-default select-none transition-all duration-500"
+  style="background-image: linear-gradient(135deg, var(--color-glacier-blue), var(--color-ice-blue));"
+  >
+    Jelly Jam
+  </h1>
+  <p class="text-base md:text-lg text-[#5F7D95] max-w-xl font-light tracking-wide mb-2">A 12-hour game jam in San Jose (Location TBD).</p>
+  <p class="text-sm text-[#5F7D95] mb-12 font-secondary">Spring 2026 · Leland CS Club</p>
+
+  <a href="https://forms.fillout.com/t/taUP71dZcYus" class="glass px-8 py-3 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
+    Register — April 18, 2026
+  </a>
+
+  <a href="mailto:lhshacks2026@gmail.com" class="mt-4 glass px-6 py-2 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
+    Contact Us
+  </a>
+  <div
+  id="scroll-hint"
+  class="fixed bottom-9 left-1/2 -translate-x-1/2 items-center text-[#89aebf]"
+  >
+    <svg
+    class="w-8 h-8 animate-bounce"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="3"
+    viewBox="0 0 24 24"
+    >
+      <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </div>
+</section>
+<script>
+const scrollHint = document.getElementById("scroll-hint");
+window.addEventListener(
+  "scroll",
+  () => {
+    const scrolled = window.scrollY;
+    const opacity = Math.max(0, 1 - scrolled / 100);
+    // scrollHint only visible at very top
+    if (scrollHint) {
+      scrollHint.style.opacity = opacity.toString();
+    }
+  },
+  // { passive: true },
+);
+</script>
