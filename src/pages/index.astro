@@ -30,6 +30,38 @@ const base = import.meta.env.BASE_URL;
      <a href="mailto:lhshacks2026@gmail.com" class="mt-4 glass px-6 py-2 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
       Contact Us
     </a>
+    <div
+        id="scroll-hint"
+        class="fixed bottom-9 left-1/2 -translate-x-1/2 items-center text-[#89aebf]"
+    >
+        <svg
+            class="w-8 h-8 animate-bounce"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </div>
+    <script>
+    const scrollHint = document.getElementById("scroll-hint");
+    window.addEventListener(
+        "scroll",
+        () => {
+            const scrolled = window.scrollY;
+            const opacity = Math.max(0, 1 - scrolled / 100);
+            // scrollHint only visible at very top
+            if (scrollHint) {
+                scrollHint.style.opacity = opacity.toString();
+            }
+        },
+        // { passive: true },
+    );
+    </script>
   </section>
 
   <!-- About -->
