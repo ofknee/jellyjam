@@ -1,0 +1,16 @@
+---
+import '../../styles/global.css';
+interface Props {
+  title: string,
+  time: string,
+  description: string,
+}
+const { title, time, description } = Astro.props;
+---
+<div class="card group flex items-start gap-6">
+  <p class="text-xs font-secondary font-semibold tracking-widest text-[#5F7D95] mt-1 w-28 shrink-0">{time}</p>
+  <div>
+    <h3 class="text-xl font-bold font-display text-[#4A4A4A] group-hover:text-[#82A7B9] transition-colors duration-300">{title}</h3>
+    <p class="text-[#5F7D95] text-sm mt-1 leading-relaxed">{description}</p>
+  </div>
+</div>
