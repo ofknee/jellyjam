@@ -1,31 +1,36 @@
 <!-- Hero -->
-<section id="top" class="min-h-[calc(100vh-5.5rem)] flex flex-col items-center justify-center text-center px-4 relative">
-  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-glacier-blue/15 blur-[120px] -z-10"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-olive-green/10 blur-[120px] -z-10"></div>
+<section id="top" class="min-h-[calc(100vh-5.5rem)] flex flex-col items-center justify-center text-center px-4 relative overflow-hidden scroll-mt-20">
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-glacier-blue/15 blur-[120px] -z-10 animate-pulse-slow"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-olive-green/10 blur-[120px] -z-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#C5E7F1]/20 blur-[100px] -z-10 animate-wave"></div>
 
   <h1
-  class="text-6xl md:text-8xl font-black mb-6 bg-clip-text text-transparent leading-tight font-display tracking-tighter cursor-default select-none transition-all duration-500"
+  class="text-6xl md:text-8xl font-black mb-6 bg-clip-text text-transparent leading-tight font-display tracking-tighter cursor-default select-none transition-all duration-500 animate-fade-in-up group"
   style="background-image: linear-gradient(135deg, var(--color-glacier-blue), var(--color-ice-blue));"
   >
     Jelly Jam
   </h1>
-  <p class="text-base md:text-lg text-[#5F7D95] max-w-xl font-light tracking-wide mb-2">A 12-hour game jam in San Jose (Location TBD).</p>
-  <p class="text-sm text-[#5F7D95] mb-12 font-secondary">Spring 2026 · Leland CS Club</p>
+  <p class="text-base md:text-lg text-[#5F7D95] max-w-xl font-light tracking-wide mb-2 animate-fade-in-up" style="animation-delay: 0.2s;">A 12-hour game jam in San Jose (Location TBD).</p>
+  <p class="text-sm text-[#5F7D95] mb-12 font-secondary animate-fade-in-up" style="animation-delay: 0.4s;">Spring 2026 · Leland CS Club</p>
 
-  <a href="https://forms.fillout.com/t/taUP71dZcYus" class="glass px-8 py-3 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
-    Register — April 18, 2026
-  </a>
+  <div class="flex flex-col gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+    <a href="https://forms.fillout.com/t/taUP71dZcYus" class="group/btn relative glass px-8 py-3 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer select-none overflow-hidden">
+      <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/btn:opacity-100 group-hover/btn:animate-shimmer"></span>
+      <span class="relative hover:scale-105 inline-block transition-transform duration-300">Register</span>
+    </a>
 
-  <a href="mailto:lhshacks2026@gmail.com" class="mt-4 glass px-6 py-2 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer select-none">
-    Contact Us
-  </a>
+    <a href="mailto:lhshacks2026@gmail.com" class="group/btn relative glass px-6 py-2 rounded-full text-sm font-semibold text-[#82A7B9] tracking-wider border border-[#C5E7F1] hover:bg-[#C5E7F1]/20 hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer select-none overflow-hidden">
+      <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/btn:opacity-100 group-hover/btn:animate-shimmer"></span>
+      <span class="relative hover:scale-105 inline-block transition-transform duration-300">Contact Us</span>
+    </a>
+  </div>
+  
   <div
   id="scroll-hint"
-  class="fixed bottom-9 left-1/2 -translate-x-1/2 items-center text-[#89aebf]"
+  class="fixed bottom-9 left-1/2 -translate-x-1/2 items-center text-[#89aebf] transition-all duration-300 group"
   >
     <svg
-    class="w-8 h-8 animate-bounce"
+    class="w-8 h-8 animate-bounce group-hover:text-[#C5E7F1] transition-colors duration-300"
     fill="none"
     stroke="currentColor"
     stroke-width="3"
@@ -38,6 +43,55 @@
     </svg>
   </div>
 </section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  #scroll-hint:hover {
+    filter: drop-shadow(0 0 8px rgba(197, 231, 241, 0.6));
+  }
+</style>
+
 <script>
 const scrollHint = document.getElementById("scroll-hint");
 window.addEventListener(
@@ -48,6 +102,7 @@ window.addEventListener(
     // scrollHint only visible at very top
     if (scrollHint) {
       scrollHint.style.opacity = opacity.toString();
+      scrollHint.style.pointerEvents = opacity < 0.1 ? "none" : "auto";
     }
   },
   // { passive: true },
