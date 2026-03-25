@@ -2,34 +2,67 @@
 import '../styles/global.css';
 import Question from './modules/Question.astro'
 ---
-<!-- FAQ -->
-<section id="faq" class="max-w-6xl mx-auto pt-8 pb-32 px-6 scroll-mt-20">
-  <div class="text-center mb-20">
+
+<section id="faq" class="relative max-w-6xl mx-auto pt-8 pb-32 px-6 scroll-mt-20 overflow-visible">
+
+  <!-- 🌊 background assets -->
+  <img
+    src="/jellyjam/assets/jellyfish1.png"
+    alt=""
+    class="absolute top-24 left-8 w-32 opacity-70 pointer-events-none z-10"
+  />
+
+  <img
+    src="/jellyjam/assets/star1.png"
+    alt=""
+    class="absolute bottom-16 right-16 w-20 opacity-70 pointer-events-none z-20 rotate-12"
+  />
+
+  <div class="text-center mb-20 relative z-10">
     <p class="text-xs uppercase tracking-widest text-[#5F7D95] mb-4 font-secondary">Questions</p>
-    <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">FAQ</h2>
-    <p class="text-[#5F7D95] text-lg font-light mt-4">Answers to common questions.</p>
+    
+    <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
+      FAQ
+    </h2>
+    
+    <p class="text-[#5F7D95] text-lg font-light mt-4">
+      Answers to common questions.
+    </p>
   </div>
 
-  <div class="grid gap-6">
-    <Question question="What is a game jam?" 
-    answer="A game jam is an event where you build a game from scratch in a short period of time."/>
+  <div class="relative grid gap-6 z-10">
+
+    <!-- 🪸 small accent near list -->
+    <img
+      src="/jellyjam/assets/shell1.png"
+      alt=""
+      class="absolute top-1/3 -right-10 w-24 opacity-80 pointer-events-none z-20 -rotate-12"
+    />
+    <img
+      src="/jellyjam/assets/shell2.png"
+      alt=""
+      class="absolute top-2/3 -left-10 w-24 opacity-80 pointer-events-none z-20 rotate-12"
+    />
+
+    <Question question="What is a hackathon?" 
+      answer="A hackathon is a coding event where you build a program from scratch in a short period of time (in our case, 12 hours)."/>
 
     <Question question="Am I eligible to participate?" 
-    answer="All teenagers (13–18) are eligible. No prior experience needed."/>
+      answer="All teenagers (13–18) are eligible."/>
 
     <Question question="What if I don't have any experience?" 
-    answer="That's totally fine! There'll be workshops and mentors throughout the day to help you get unstuck."/>
+      answer="That's totally fine! There'll be workshops and mentors throughout the day to help you get unstuck."/>
 
     <Question question="Is this free?" 
-    answer="Yes, everything is free - venue, food, workshops, prizes. Just show up!"/>
+      answer="Yes, everything is free. Just show up!"/>
     
     <Question question="What do I need to bring?" 
-    answer="A laptop, a charger, and your creativity. We'll help you with the rest!"/>
+      answer="A laptop, a charger, and some form of ID."/>
 
     <Question question="What kind of projects are allowed?" 
-    answer="Any kind of project! We encourage creativity and innovation."/>
+      answer="Any kind of project, as long as it's on theme! We encourage creativity and innovation."/>
 
     <Question question="Can I work with others?" 
-    answer="Yes! Collaborating with others is encouraged. You can form teams of up to 3 people and work together on your projects."/>
+      answer="Yes! You can form teams of up to 3 people and work together on your projects."/>
   </div>
 </section>

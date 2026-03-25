@@ -2,23 +2,46 @@
 import Card from './modules/Card.astro';
 import '../styles/global.css';
 ---
-<!-- About -->
-<section id="about" class="max-w-6xl mx-auto pt-8 pb-32 px-6 scroll-mt-20">
-  <div class="text-center mb-20">
+
+<section id="about" class="relative max-w-6xl mx-auto pt-8 pb-32 px-6 scroll-mt-20 overflow-visible">
+  <div class="text-center mb-20 relative z-10">
     <p class="text-xs uppercase tracking-widest text-[#5F7D95] mb-4 font-secondary">About</p>
     <h2 class="text-5xl md:text-6xl font-black font-display tracking-tighter text-[#769966] mb-0">
       What is Jelly Jam?
     </h2>
     <p class="text-[#5F7D95] max-w-2xl mx-auto mt-4">
-      A day-long hackathon for middle and high school students.
+      A day-long hackathon for middle and high school students aged 13-18 years old.
     </p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-8">
-    <Card title="The Jam" description="In 12 hours, work solo or with a team, to build something amazing! All skill levels are welcome." />
+  <div class="relative">
+    <img
+      src="/jellyjam/assets/shell1.png"
+      alt=""
+      class="absolute -top-10 -left-18 w-24 md:w-32 opacity-70 pointer-events-none z-20"
+    />
+    <img
+      src="/jellyjam/assets/star1.png"
+      alt=""
+      class="absolute -bottom-8 right-0 w-16 md:w-20 opacity-70 pointer-events-none z-20"
+    />
 
-    <Card title="The Theme" description="The theme is marine conservation!" />
-    <Card title="The Awards" description="Top games will be showcased on this site and win prizes. Everyone plays and rates each others' games to determine who wins." />
-
+    <div class="grid md:grid-cols-3 gap-8 relative z-10">
+      <Card
+        number="01"
+        title="Event"
+        description="In 12 hours, work solo or with a team, to code a game or app. No prior experience needed!"
+      />
+      <Card
+        number="02"
+        title="Theme"
+        description="The theme is marine conservation!"
+      />
+      <Card
+        number="03"
+        title="Awards"
+        description="Top entries will be showcased and win prizes."
+      />
+    </div>
   </div>
 </section>
