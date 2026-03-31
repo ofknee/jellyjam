@@ -6,16 +6,19 @@ import InstagramIcon from './icons/Instagram.astro';
 
 <nav class="sticky top-0 z-100 w-full">
 	<div class="glass glass-header border-b border-[#D9E4F5]">
-		<div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
-			<a href="#top" class="font-display text-2xl leading-none tracking-tight text-[#4A4A4A] hover:text-[#82A7B9] transition-colors">
-				JellyJam
+		<div class="w-full px-2 md:px-4 h-16 relative flex items-center justify-between">			<div class="h-16 flex items-center">
+			<a href="#top" class="block">
+				<img
+				src="/jellyjam/logo.png"
+				alt="Jelly Jam"
+				class="block h-22 w-auto"
+				/>
 			</a>
-
-			<div class="hidden md:flex items-center gap-6 font-secondary font-semibold text-sm uppercase tracking-wider text-[#4A4A4A]">
+			</div>
+			<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 font-secondary font-semibold text-sm uppercase tracking-wider text-[#4A4A4A]">
 				<a href="#about" class="hover:text-[#82A7B9] transition-colors">About</a>
-				<a href="#rules" class="hover:text-[#82A7B9] transition-colors">Rules</a>
-				<a href="#prizes" class="hover:text-[#82A7B9] transition-colors">Prizes</a>
-				<!-- <a href="#sponsors" class="hover:text-[#82A7B9] transition-colors">Sponsors</a> -->
+				<a href="#team" class="hover:text-[#82A7B9] transition-colors">Team</a>
+				<a href="#schedule" class="hover:text-[#82A7B9] transition-colors">Schedule</a>
 				<a href="#faq" class="hover:text-[#82A7B9] transition-colors">FAQ</a>
 			</div>
 

@@ -1,7 +1,7 @@
 <canvas 
   id="waterCanvas" 
   class="fixed inset-0 w-full h-full pointer-events-none" 
-  style="z-index: -1; background: transparent; filter: blur(8px); transform: scale(1.05);"
+  style="z-index: -10; background: transparent; filter: blur(8px); transform: scale(1.05);"
 ></canvas>
 
 <script is:inline>
@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = Math.abs(buffer2[i]);
       if (val > 0.5) {
         const pos = i*4;
-        data[pos]   = 130;  // R  glacier blue
-        data[pos+1] = 167;  // G
-        data[pos+2] = 185;  // B
+        data[pos]   = 197;   // R
+        data[pos+1] = 231;   // G
+        data[pos+2] = 241;  // B ice blue
         data[pos+3] = Math.min(255, val); // A
       }
     }
