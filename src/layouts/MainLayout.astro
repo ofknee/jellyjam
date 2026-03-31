@@ -10,15 +10,42 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/jellyjam/logo.png" />
+    <link rel="apple-touch-icon" href="/jellyjam/logo.png" />
   </head>
   <body>
     <WaterSim />
-    
-    <Header />
-    
 
-    <main>
-      <slot />
-    </main>
+    <div class="site-browser">
+      <div class="site-browser-topbar">
+        <div class="browser-controls" aria-hidden="true">
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+        </div>
+        <div class="site-browser-address">jellyjam2026.dev</div>
+      </div>
+
+      <div class="site-browser-body">
+        <Header />
+        <main class="page-wrapper">
+          <slot />
+        </main>
+      </div>
+    </div>
+
+    <script is:inline>
+      document.addEventListener('dragstart', (event) => {
+        if (event.target instanceof HTMLImageElement) {
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener('contextmenu', (event) => {
+        if (event.target instanceof HTMLImageElement) {
+          event.preventDefault();
+        }
+      });
+    </script>
   </body>
 </html>

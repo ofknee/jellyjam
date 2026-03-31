@@ -4,41 +4,114 @@ import GithubIcon from './icons/Github.astro';
 import InstagramIcon from './icons/Instagram.astro';
 ---
 
-<nav class="sticky top-0 z-100 w-full">
-	<div class="glass glass-header border-b border-[#D9E4F5]">
-		<div class="w-full px-2 md:px-4 h-16 relative flex items-center justify-between">			<div class="h-16 flex items-center">
-			<a href="#top" class="block">
-				<img
-				src="/jellyjam/logo.png"
-				alt="Jelly Jam"
-				class="block h-22 w-auto"
-				/>
-			</a>
-			</div>
-			<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 font-secondary font-semibold text-sm uppercase tracking-wider text-[#4A4A4A]">
-				<a href="#about" class="hover:text-[#82A7B9] transition-colors">About</a>
-				<a href="#team" class="hover:text-[#82A7B9] transition-colors">Team</a>
-				<a href="#schedule" class="hover:text-[#82A7B9] transition-colors">Schedule</a>
-				<a href="#faq" class="hover:text-[#82A7B9] transition-colors">FAQ</a>
-			</div>
+<nav class="browser-tab-nav">
+	<div class="flex items-center gap-3 min-w-0 flex-1">
+		<a href="#top" class="hidden md:block shrink-0">
+			<img
+			src="/jellyjam/logo.png"
+			alt="Jelly Jam"
+			class="block h-14 md:h-16 w-auto"
+			/>
+		</a>
 
-			<div class="flex items-center gap-3 md:gap-5">
-				<div class="flex items-center gap-2 md:gap-3 text-[#5F7D95]">
-					<a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Instagram">
-						<InstagramIcon class="w-5 h-5" />
-					</a>
-					<a href="https://discord.gg/CRkvFvxY" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Discord">
-						<DiscordIcon class="w-5 h-5" />
-					</a>
-					<a href="https://github.com/ofknee/jellyjam" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="GitHub">
-						<GithubIcon class="w-5 h-5" />
-					</a>
-				</div>
-
-				<a href="https://forms.fillout.com/t/taUP71dZcYus" class="hidden sm:inline-flex px-4 py-2 rounded-full text-sm font-secondary font-semibold text-[#4A4A4A] border border-[#C5E7F1] hover:bg-[#C5E7F1]/30 transition-all duration-300">
-					Register
-				</a>
-			</div>
+		<div class="browser-tabs">
+			<a href="#about" class="nav-tab" data-target="about">About</a>
+			<a href="#team" class="nav-tab" data-target="team">Team</a>
+			<a href="#schedule" class="nav-tab" data-target="schedule">Schedule</a>
+			<a href="#rules" class="nav-tab" data-target="rules">Rules</a>
+			<a href="#prizes" class="nav-tab" data-target="prizes">Prizes</a>
+			<a href="#faq" class="nav-tab" data-target="faq">FAQ</a>
 		</div>
 	</div>
+
+	<div class="hidden md:flex items-center gap-3 md:gap-5">
+		<div class="hidden md:flex items-center gap-2 md:gap-3 text-[#5F7D95]">
+			<a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Instagram">
+				<InstagramIcon class="w-5 h-5" />
+			</a>
+			<a href="https://discord.gg/CRkvFvxY" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Discord">
+				<DiscordIcon class="w-5 h-5" />
+			</a>
+			<a href="https://github.com/ofknee/jellyjam" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="GitHub">
+				<GithubIcon class="w-5 h-5" />
+			</a>
+		</div>
+
+		<a href="https://forms.fillout.com/t/taUP71dZcYus" class="hidden sm:inline-flex btn-pill btn-pill-ghost py-2! px-4! text-[0.74rem]! whitespace-nowrap">
+			Register
+		</a>
+	</div>
 </nav>
+
+<script>
+const tabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav-tab[data-target]'));
+const sections = tabs
+	.map((tab) => document.getElementById(tab.dataset.target || ''))
+	.filter((section): section is HTMLElement => section !== null);
+
+function setActiveTab(id: string) {
+	tabs.forEach((tab) => {
+		const isActive = tab.dataset.target === id;
+		tab.classList.toggle('is-active', isActive);
+	});
+}
+
+if (tabs.length > 0) {
+	const initialHash = window.location.hash.replace('#', '');
+	if (initialHash) {
+		setActiveTab(initialHash);
+	} else {
+		setActiveTab('about');
+	}
+}
+
+tabs.forEach((tab) => {
+	tab.addEventListener('click', (event) => {
+		event.preventDefault();
+		const id = tab.dataset.target;
+		if (!id) return;
+
+		const section = document.getElementById(id);
+		if (!section) return;
+
+		const nav = document.querySelector('.browser-tab-nav');
+		const navHeight = nav instanceof HTMLElement ? nav.offsetHeight : 0;
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
+		const offset = isMobile ? 0 : navHeight + 8;
+		const targetTop = section.getBoundingClientRect().top + window.scrollY - offset;
+
+		window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+		history.replaceState(null, '', `#${id}`);
+		setActiveTab(id);
+	});
+});
+
+window.addEventListener('hashchange', () => {
+	const id = window.location.hash.replace('#', '');
+	if (id) setActiveTab(id);
+});
+
+if ('IntersectionObserver' in window && sections.length > 0) {
+	const observer = new IntersectionObserver(
+		(entries) => {
+			let topEntry = null;
+			for (const entry of entries) {
+				if (!entry.isIntersecting) continue;
+				if (!topEntry || entry.intersectionRatio > topEntry.intersectionRatio) {
+					topEntry = entry;
+				}
+			}
+			if (topEntry) {
+				setActiveTab(topEntry.target.id);
+			}
+		},
+		{
+			root: null,
+			rootMargin: '-18% 0px -55% 0px',
+			threshold: [0.25, 0.45, 0.62],
+		},
+	);
+
+	sections.forEach((section) => observer.observe(section));
+}
+</script>
