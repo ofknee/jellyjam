@@ -5,7 +5,7 @@ export default {
 			fontFamily: {
 				sans: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
 				display: ['Sniglet', 'cursive'],
-				secondary: ['Quicksand', 'sans-serif'],
+				secondary: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
 				// New palette from design spec

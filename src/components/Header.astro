@@ -5,49 +5,82 @@ import InstagramIcon from './icons/Instagram.astro';
 ---
 
 <nav class="browser-tab-nav">
-	<div class="flex items-center gap-3 min-w-0 flex-1">
-		<a href="#top" class="hidden md:block shrink-0">
-			<img
-			src="/jellyjam/logo.png"
-			alt="Jelly Jam"
-			class="block h-8 md:h-9 w-auto"
-			/>
-		</a>
+	<div class="browser-tab-row">
+		<div class="flex items-center gap-3 min-w-0 flex-1">
+			<div class="browser-controls hidden md:flex" aria-hidden="true">
+				<span class="browser-dot"></span>
+				<span class="browser-dot"></span>
+				<span class="browser-dot"></span>
+			</div>
 
-		<div class="browser-tabs">
-			<a href="#about" class="nav-tab" data-target="about">About</a>
-			<a href="#team" class="nav-tab" data-target="team">Team</a>
-			<a href="#schedule" class="nav-tab" data-target="schedule">Schedule</a>
-			<a href="#rules" class="nav-tab" data-target="rules">Rules</a>
-			<a href="#prizes" class="nav-tab" data-target="prizes">Prizes</a>
-			<a href="#faq" class="nav-tab" data-target="faq">FAQ</a>
+			<a href="#top" class="hidden md:block shrink-0">
+				<img
+				src="/jellyjam/logo.png"
+				alt="Jelly Jam"
+				class="block h-8 md:h-9 w-auto"
+				/>
+			</a>
+
+			<div class="browser-tabs">
+				<a href="#about" class="nav-tab" data-target="about"><span class="nav-tab-label">About</span><span class="nav-tab-close" data-close-tab role="button" tabindex="-1" aria-label="Close tab and go home">x</span></a>
+				<a href="#team" class="nav-tab" data-target="team"><span class="nav-tab-label">Team</span><span class="nav-tab-close" data-close-tab role="button" tabindex="-1" aria-label="Close tab and go home">x</span></a>
+				<a href="#schedule" class="nav-tab" data-target="schedule"><span class="nav-tab-label">Schedule</span><span class="nav-tab-close" data-close-tab role="button" tabindex="-1" aria-label="Close tab and go home">x</span></a>
+				<a href="#rules" class="nav-tab" data-target="rules"><span class="nav-tab-label">Rules</span><span class="nav-tab-close" data-close-tab role="button" tabindex="-1" aria-label="Close tab and go home">x</span></a>
+				<a href="#prizes" class="nav-tab" data-target="prizes"><span class="nav-tab-label">Prizes</span><span class="nav-tab-close" data-close-tab role="button" tabindex="-1" aria-label="Close tab and go home">x</span></a>
+				<a href="#faq" class="nav-tab" data-target="faq"><span class="nav-tab-label">FAQ</span><span class="nav-tab-close" data-close-tab role="button" tabindex="-1" aria-label="Close tab and go home">x</span></a>
+			</div>
 		</div>
 	</div>
 
-	<div class="hidden md:flex items-center gap-3 md:gap-5">
-		<div class="hidden md:flex items-center gap-2 md:gap-3 text-[#5F7D95]">
-			<a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Instagram">
-				<InstagramIcon class="w-5 h-5" />
-			</a>
-			<a href="https://discord.gg/CRkvFvxY" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Discord">
-				<DiscordIcon class="w-5 h-5" />
-			</a>
-			<a href="https://github.com/ofknee/jellyjam" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="GitHub">
-				<GithubIcon class="w-5 h-5" />
+	<div class="browser-omnibar-row">
+		<a href="#top" class="browser-home-button" data-home-button aria-label="Go to home page">Home</a>
+		<label class="site-browser-address-shell" aria-label="Search or type a page">
+			<span class="site-browser-address-prefix">jellyjam2026.dev/</span>
+			<input class="site-browser-address" type="text" value="home" placeholder="search pages" autocomplete="off" spellcheck="false" />
+		</label>
+		<div class="browser-extensions">
+			<div class="hidden md:flex items-center gap-2 md:gap-3 text-[#5F7D95]">
+				<a href="https://www.instagram.com/jellyjam2026/" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Instagram">
+					<InstagramIcon class="w-5 h-5" />
+				</a>
+				<a href="https://discord.gg/CRkvFvxY" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="Discord">
+					<DiscordIcon class="w-5 h-5" />
+				</a>
+				<a href="https://github.com/ofknee/jellyjam" target="_blank" class="hover:text-[#4A4A4A] transition-all hover:scale-110 duration-300" aria-label="GitHub">
+					<GithubIcon class="w-5 h-5" />
+				</a>
+			</div>
+
+			<a href="https://forms.fillout.com/t/taUP71dZcYus" class="hidden sm:inline-flex btn-pill btn-pill-ghost py-2! px-4! text-[0.74rem]! whitespace-nowrap">
+				Register
 			</a>
 		</div>
-
-		<a href="https://forms.fillout.com/t/taUP71dZcYus" class="hidden sm:inline-flex btn-pill btn-pill-ghost py-2! px-4! text-[0.74rem]! whitespace-nowrap">
-			Register
-		</a>
 	</div>
 </nav>
 
 <script>
 const tabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav-tab[data-target]'));
-const sections = tabs
+const tabSections = tabs
 	.map((tab) => document.getElementById(tab.dataset.target || ''))
 	.filter((section): section is HTMLElement => section !== null);
+const pageWrapper = document.querySelector<HTMLElement>('main.page-wrapper');
+const screens = Array.from(pageWrapper?.children || []).filter((node): node is HTMLElement => node instanceof HTMLElement);
+const screenMap = new Map<string, HTMLElement>();
+const addressBar = document.querySelector<HTMLInputElement>('.site-browser-address');
+const addressPrefix = document.querySelector<HTMLElement>('.site-browser-address-prefix');
+const homeButton = document.querySelector<HTMLElement>('[data-home-button]');
+const closeTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-close-tab]'));
+const homeId = 'top';
+const scrollableScreenIds = new Set(['schedule', 'rules', 'faq']);
+const desktopMediaQuery = window.matchMedia('(min-width: 769px)');
+let isDesktopMode = desktopMediaQuery.matches;
+let sectionObserver: IntersectionObserver | null = null;
+
+screens.forEach((screen) => {
+	if (screen.id) {
+		screenMap.set(screen.id, screen);
+	}
+});
 
 function setActiveTab(id: string) {
 	tabs.forEach((tab) => {
@@ -56,51 +89,129 @@ function setActiveTab(id: string) {
 	});
 }
 
-if (tabs.length > 0) {
-	const initialHash = window.location.hash.replace('#', '');
-	if (initialHash) {
-		setActiveTab(initialHash);
-	} else {
-		setActiveTab('about');
+function clearActiveTab() {
+	tabs.forEach((tab) => tab.classList.remove('is-active'));
+}
+
+function resolveScreenId(query: string) {
+	const normalized = query.trim().toLowerCase().replace(/^jellyjam2026\.dev\//, '');
+	if (!normalized || normalized === 'home') return homeId;
+	if (screenMap.has(normalized)) return normalized;
+	const exactTab = tabs.find((tab) => tab.dataset.target === normalized);
+	if (exactTab?.dataset.target) return exactTab.dataset.target;
+	const matchedTab = tabs.find((tab) => tab.dataset.target?.includes(normalized) || tab.textContent?.toLowerCase().includes(normalized));
+	return matchedTab?.dataset.target || null;
+}
+
+function resetScreenFitStyles() {
+	screens.forEach((screen) => {
+		screen.style.removeProperty('--screen-scale');
+		screen.style.removeProperty('--screen-offset-y');
+	});
+}
+
+function fitActiveScreen() {
+	if (!isDesktopMode || !pageWrapper) return;
+	if (pageWrapper.classList.contains('browser-screen-scroll-mode')) {
+		resetScreenFitStyles();
+		return;
+	}
+
+	const activeScreen = pageWrapper.querySelector<HTMLElement>('.screen-active');
+	if (!activeScreen) return;
+
+	activeScreen.style.removeProperty('--screen-scale');
+	activeScreen.style.removeProperty('--screen-offset-y');
+
+	const availableWidth = pageWrapper.clientWidth;
+	const availableHeight = pageWrapper.clientHeight;
+	const requiredWidth = Math.max(activeScreen.clientWidth, 1);
+	const requiredHeight = Math.max(activeScreen.scrollHeight, 1);
+	const scale = Math.min(1, availableWidth / requiredWidth, availableHeight / requiredHeight);
+	const scaledHeight = requiredHeight * scale;
+	const offsetY = Math.max(0, (availableHeight - scaledHeight) / 2);
+
+	activeScreen.style.setProperty('--screen-scale', String(scale));
+	activeScreen.style.setProperty('--screen-offset-y', `${offsetY}px`);
+}
+
+function scheduleFitActiveScreen() {
+	if (!isDesktopMode) return;
+	window.requestAnimationFrame(() => {
+		window.requestAnimationFrame(() => {
+			fitActiveScreen();
+		});
+	});
+}
+
+function updateAddress(id: string) {
+	if (!addressBar) return;
+	addressBar.value = id === homeId ? 'home' : id;
+	if (addressPrefix) {
+		addressPrefix.textContent = 'jellyjam2026.dev/';
 	}
 }
 
-tabs.forEach((tab) => {
-	tab.addEventListener('click', (event) => {
-		event.preventDefault();
-		const id = tab.dataset.target;
-		if (!id) return;
+function showScreen(id: string) {
+	const activeScreen = screenMap.get(id) || screenMap.get(homeId) || screens[0];
+	if (!activeScreen) return;
 
-		const section = document.getElementById(id);
-		if (!section) return;
+	if (pageWrapper) {
+		pageWrapper.classList.add('browser-screen-mode');
+	}
 
-		const nav = document.querySelector('.browser-tab-nav');
-		const navHeight = nav instanceof HTMLElement ? nav.offsetHeight : 0;
-		const isMobile = window.matchMedia('(max-width: 768px)').matches;
-		const offset = isMobile ? 0 : navHeight + 8;
-		const targetTop = section.getBoundingClientRect().top + window.scrollY - offset;
-
-		window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-		history.replaceState(null, '', `#${id}`);
-		setActiveTab(id);
+	screens.forEach((screen) => {
+		screen.classList.toggle('screen-active', screen === activeScreen);
 	});
-});
 
-window.addEventListener('hashchange', () => {
-	const id = window.location.hash.replace('#', '');
-	if (id) setActiveTab(id);
-});
+	const activeId = activeScreen.id || homeId;
+	const isScrollableScreen = scrollableScreenIds.has(activeId);
+	pageWrapper?.classList.toggle('browser-screen-scroll-mode', isScrollableScreen);
 
-if ('IntersectionObserver' in window && sections.length > 0) {
-	const observer = new IntersectionObserver(
+	if (activeId === homeId) {
+		clearActiveTab();
+	} else {
+		setActiveTab(activeId);
+	}
+
+	updateAddress(activeId);
+	window.scrollTo({ top: 0, behavior: 'auto' });
+	scheduleFitActiveScreen();
+
+	activeScreen.classList.remove('screen-enter');
+	void activeScreen.offsetWidth;
+	activeScreen.classList.add('screen-enter');
+}
+
+function showAllScreens() {
+	pageWrapper?.classList.remove('browser-screen-mode');
+	pageWrapper?.classList.remove('browser-screen-scroll-mode');
+	screens.forEach((screen) => screen.classList.remove('screen-active'));
+	resetScreenFitStyles();
+	updateAddress(homeId);
+}
+
+function goToScreen(id: string) {
+	if (!isDesktopMode) return;
+	showScreen(id);
+	history.replaceState(null, '', `#${id}`);
+}
+
+function setupSectionObserver() {
+	if (sectionObserver || !('IntersectionObserver' in window) || tabSections.length === 0) return;
+
+	sectionObserver = new IntersectionObserver(
 		(entries) => {
-			let topEntry = null;
+			if (isDesktopMode) return;
+
+			let topEntry: IntersectionObserverEntry | null = null;
 			for (const entry of entries) {
 				if (!entry.isIntersecting) continue;
 				if (!topEntry || entry.intersectionRatio > topEntry.intersectionRatio) {
 					topEntry = entry;
 				}
 			}
+
 			if (topEntry) {
 				setActiveTab(topEntry.target.id);
 			}
@@ -112,6 +223,117 @@ if ('IntersectionObserver' in window && sections.length > 0) {
 		},
 	);
 
-	sections.forEach((section) => observer.observe(section));
+	tabSections.forEach((section) => sectionObserver?.observe(section));
 }
+
+function teardownSectionObserver() {
+	sectionObserver?.disconnect();
+	sectionObserver = null;
+}
+
+function applyNavigationMode() {
+	isDesktopMode = desktopMediaQuery.matches;
+	const currentHash = window.location.hash.replace('#', '');
+
+	if (isDesktopMode) {
+		teardownSectionObserver();
+		showScreen(currentHash && screenMap.has(currentHash) ? currentHash : homeId);
+		scheduleFitActiveScreen();
+		return;
+	}
+
+	showAllScreens();
+	setupSectionObserver();
+	if (currentHash && currentHash !== homeId) {
+		setActiveTab(currentHash);
+	} else {
+		setActiveTab('about');
+	}
+}
+
+tabs.forEach((tab) => {
+	tab.addEventListener('click', (event) => {
+		const id = tab.dataset.target;
+		if (!id) return;
+
+		if (isDesktopMode) {
+			event.preventDefault();
+			goToScreen(id);
+			return;
+		}
+
+		goToScreen(id);
+	});
+});
+
+closeTargets.forEach((target) => {
+	target.addEventListener('click', (event) => {
+		event.preventDefault();
+		event.stopPropagation();
+
+		if (isDesktopMode) {
+			goToScreen(homeId);
+			return;
+		}
+
+		window.location.hash = homeId;
+	});
+});
+
+homeButton?.addEventListener('click', (event) => {
+	event.preventDefault();
+
+	if (isDesktopMode) {
+		goToScreen(homeId);
+		return;
+	}
+
+	window.location.hash = homeId;
+});
+
+addressBar?.addEventListener('keydown', (event) => {
+	if (event.key !== 'Enter') return;
+	event.preventDefault();
+	const targetId = resolveScreenId(addressBar.value);
+	if (!targetId) return;
+
+	if (isDesktopMode) {
+		goToScreen(targetId);
+		return;
+	}
+
+	window.location.hash = `#${targetId}`;
+});
+
+addressBar?.addEventListener('focus', () => {
+	if (isDesktopMode) {
+		addressBar.select();
+	}
+});
+
+addressBar?.addEventListener('blur', () => {
+	updateAddress(window.location.hash.replace('#', '') || homeId);
+});
+
+window.addEventListener('hashchange', () => {
+	const id = window.location.hash.replace('#', '');
+
+	if (isDesktopMode) {
+		showScreen(id || homeId);
+		return;
+	}
+
+	if (id && id !== homeId) {
+		setActiveTab(id);
+	}
+});
+
+desktopMediaQuery.addEventListener('change', applyNavigationMode);
+window.addEventListener('resize', () => {
+	scheduleFitActiveScreen();
+});
+window.addEventListener('load', () => {
+	scheduleFitActiveScreen();
+});
+applyNavigationMode();
 </script>
